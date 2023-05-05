@@ -14,7 +14,7 @@ namespace RecipeWinForms
     public partial class frmRecipe : Form
     {
         public frmRecipe()
-        {
+        { 
             InitializeComponent();
         }
         public void ShowForm(int recipeid)

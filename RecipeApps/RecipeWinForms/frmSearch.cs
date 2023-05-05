@@ -16,7 +16,6 @@ namespace RecipeWinForms
     {
         public frmSearch()
         {
-            
                 InitializeComponent();
                 btnSearch.Click += BtnSearch_Click;
                 gRecipe.CellDoubleClick += gRecipe_CellDoubleClick;
@@ -28,7 +27,6 @@ namespace RecipeWinForms
                 DataTable dt = SQLUtility.GetDataTable(sql);
                 gRecipe.DataSource = dt;
                 gRecipe.Columns["RecipeID"].Visible = false;
-
             }
             private void ShowPresidentForm(int rowindex)
             {
@@ -51,7 +49,6 @@ namespace RecipeWinForms
             {
                 SearchForRecipe(txtRecipeName.Text);
             }
-
         }
     }
 
