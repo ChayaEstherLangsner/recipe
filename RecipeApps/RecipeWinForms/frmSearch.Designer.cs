@@ -32,9 +32,9 @@
             this.lblRecipeName = new System.Windows.Forms.Label();
             this.txtRecipeName = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
             this.tblMain = new System.Windows.Forms.TableLayoutPanel();
             this.gRecipe = new System.Windows.Forms.DataGridView();
-            this.btnNew = new System.Windows.Forms.Button();
             this.tblSearch.SuspendLayout();
             this.tblMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gRecipe)).BeginInit();
@@ -55,7 +55,7 @@
             this.tblSearch.Name = "tblSearch";
             this.tblSearch.RowCount = 1;
             this.tblSearch.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblSearch.Size = new System.Drawing.Size(415, 39);
+            this.tblSearch.Size = new System.Drawing.Size(415, 46);
             this.tblSearch.TabIndex = 0;
             // 
             // lblRecipeName
@@ -65,16 +65,16 @@
             this.lblRecipeName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblRecipeName.Location = new System.Drawing.Point(3, 0);
             this.lblRecipeName.Name = "lblRecipeName";
-            this.lblRecipeName.Size = new System.Drawing.Size(97, 44);
+            this.lblRecipeName.Size = new System.Drawing.Size(97, 46);
             this.lblRecipeName.TabIndex = 0;
             this.lblRecipeName.Text = "Recipe:";
             this.lblRecipeName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtRecipeName
             // 
-            this.txtRecipeName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtRecipeName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRecipeName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtRecipeName.Location = new System.Drawing.Point(106, 5);
+            this.txtRecipeName.Location = new System.Drawing.Point(106, 6);
             this.txtRecipeName.Name = "txtRecipeName";
             this.txtRecipeName.Size = new System.Drawing.Size(97, 34);
             this.txtRecipeName.TabIndex = 1;
@@ -85,10 +85,22 @@
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSearch.Location = new System.Drawing.Point(209, 3);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(97, 38);
+            this.btnSearch.Size = new System.Drawing.Size(97, 40);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // btnNew
+            // 
+            this.btnNew.AutoSize = true;
+            this.btnNew.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNew.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnNew.Location = new System.Drawing.Point(312, 3);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(100, 40);
+            this.btnNew.TabIndex = 3;
+            this.btnNew.Text = "New";
+            this.btnNew.UseVisualStyleBackColor = true;
             // 
             // tblMain
             // 
@@ -101,8 +113,8 @@
             this.tblMain.Location = new System.Drawing.Point(0, 0);
             this.tblMain.Name = "tblMain";
             this.tblMain.RowCount = 2;
-            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.840864F));
-            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.15913F));
+            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.21611F));
+            this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.78389F));
             this.tblMain.Size = new System.Drawing.Size(597, 509);
             this.tblMain.TabIndex = 1;
             // 
@@ -111,23 +123,12 @@
             this.gRecipe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tblMain.SetColumnSpan(this.gRecipe, 2);
             this.gRecipe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gRecipe.Location = new System.Drawing.Point(3, 48);
+            this.gRecipe.Location = new System.Drawing.Point(3, 55);
             this.gRecipe.Name = "gRecipe";
             this.gRecipe.RowHeadersWidth = 51;
             this.gRecipe.RowTemplate.Height = 29;
-            this.gRecipe.Size = new System.Drawing.Size(591, 458);
+            this.gRecipe.Size = new System.Drawing.Size(591, 451);
             this.gRecipe.TabIndex = 1;
-            // 
-            // btnNew
-            // 
-            this.btnNew.AutoSize = true;
-            this.btnNew.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnNew.Location = new System.Drawing.Point(312, 3);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(61, 38);
-            this.btnNew.TabIndex = 3;
-            this.btnNew.Text = "New";
-            this.btnNew.UseVisualStyleBackColor = true;
             // 
             // frmSearch
             // 
