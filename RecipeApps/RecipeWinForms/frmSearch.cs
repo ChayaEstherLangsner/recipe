@@ -42,7 +42,7 @@ namespace RecipeWinForms
         }
         private void FormatGrid()
         {
-            gRecipe.AllowUserToAddRows = false;
+            gRecipe.AllowUserToAddRows = false; 
             gRecipe.ReadOnly = true;
             gRecipe.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             gRecipe.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
