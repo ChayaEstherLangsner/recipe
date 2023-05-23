@@ -16,7 +16,7 @@ namespace RecipeWinForms
     {
         public frmSearch()
         {
-            InitializeComponent();
+            InitializeComponent(); 
             btnSearch.Click += BtnSearch_Click;
             gRecipe.CellDoubleClick += gRecipe_CellDoubleClick;
             btnNew.Click += BtnNew_Click;
