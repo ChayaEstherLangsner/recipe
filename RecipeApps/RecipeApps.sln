@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeWinForms", "RecipeWinForms\RecipeWinForms.csproj", "{2AE99C15-B996-4845-8901-8D0905591F32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecipeWinForms", "RecipeWinForms\RecipeWinForms.csproj", "{2AE99C15-B996-4845-8901-8D0905591F32}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CPUFramework", "..\..\CPUFramework\CPUFramework.csproj", "{E3FF05CE-EA66-45E0-A0FF-94FDC25B5C1A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CPUWindowsFormFramework", "..\..\..\source\repos\CPUWindowsFormFramework\CPUWindowsFormFramework.csproj", "{BE77650D-C586-44F2-819A-600D48D6B1F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeSystem", "RecipeSystem\RecipeSystem.csproj", "{100CC35D-E726-4723-AB88-E2AF51B27C62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeTest", "RecipeTest\RecipeTest.csproj", "{EE58DBE0-E82B-4D10-B3ED-A4DADD296734}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{E3FF05CE-EA66-45E0-A0FF-94FDC25B5C1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3FF05CE-EA66-45E0-A0FF-94FDC25B5C1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3FF05CE-EA66-45E0-A0FF-94FDC25B5C1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE77650D-C586-44F2-819A-600D48D6B1F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE77650D-C586-44F2-819A-600D48D6B1F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE77650D-C586-44F2-819A-600D48D6B1F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE77650D-C586-44F2-819A-600D48D6B1F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{100CC35D-E726-4723-AB88-E2AF51B27C62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{100CC35D-E726-4723-AB88-E2AF51B27C62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{100CC35D-E726-4723-AB88-E2AF51B27C62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{100CC35D-E726-4723-AB88-E2AF51B27C62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE58DBE0-E82B-4D10-B3ED-A4DADD296734}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE58DBE0-E82B-4D10-B3ED-A4DADD296734}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE58DBE0-E82B-4D10-B3ED-A4DADD296734}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE58DBE0-E82B-4D10-B3ED-A4DADD296734}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
