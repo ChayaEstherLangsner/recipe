@@ -39,6 +39,7 @@ namespace RecipeTest
         public void ChangeExistingRecipecalories()
         {
             int recipeid = GetExistingRecipeID();
+            //AF Before moving forward, it would be good to have a line that checks that the recipeid is > 0, so the test won't run if there are no recipes
             int calories = SQLUtility.GetFirstColumnFirstRowValue("select RecipeCalories from recipe where recipeid = " + recipeid);
             TestContext.WriteLine("calories for recipeid " + recipeid + " is " + calories);
             calories = calories + 1;
@@ -47,6 +48,7 @@ namespace RecipeTest
             dt.Rows[0]["RecipeCalories"] = calories;
             Recipe.Save(dt);
             int newcalories = SQLUtility.GetFirstColumnFirstRowValue("select recipecalories from recipe where recipeid = " + recipeid);
+            //AF The message here if the test fails seems to be a mistake, please change it to a clear message
             Assert.IsTrue(newcalories == calories, "termstart for president (" + recipeid + ") = " + newcalories);
             TestContext.WriteLine("calories for recipe (" + recipeid + ") = " + newcalories);
         }
@@ -54,6 +56,10 @@ namespace RecipeTest
         [Test]
         public void DeleteRecipe()
         {
+            /*AF I understand that you only want this test to delete a recipe that was inserted from the test above with a date in
+             it, just letting you know that if you run all the tests at once, this one won't necessarily work.
+            When I pressed run all tests, this one didn't work because there had been no recipe records with a date inserted yet
+            It's fine as is, just be aware this test might not always work*/
             DataTable dt = SQLUtility.GetDataTable("select top 1 recipeid, recipename, recipecalories from Recipe r where RecipeName like '%2023%'");
             int recipeid = 0;
             string recipedesc = "";
@@ -81,6 +87,7 @@ namespace RecipeTest
             DataTable dt = Recipe.Load(recipeid);
             int loadedid = (int)dt.Rows[0]["recipeid"];
             Assert.IsTrue(loadedid == recipeid, loadedid + "<>" + recipeid);
+            //AF This message repeats itself, the id should be printed once since the proper id was loaded
             TestContext.WriteLine("Loaded recipe (" + loadedid + ") " + recipeid);
         }
 
