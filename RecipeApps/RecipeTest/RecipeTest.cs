@@ -47,10 +47,45 @@ namespace RecipeTest
             dt.Rows[0]["RecipeCalories"] = calories;
             Recipe.Save(dt);
             int newcalories = SQLUtility.GetFirstColumnFirstRowValue("select recipecalories from recipe where recipeid = " + recipeid);
-            Assert.IsTrue(newcalories == calories, "termstart for president (" + recipeid + ") = " + newcalories);
+            Assert.IsTrue(newcalories == calories, "calories for recipe (" + recipeid + ") = " + newcalories);
             TestContext.WriteLine("calories for recipe (" + recipeid + ") = " + newcalories);
         }
-
+        [Test]
+        public void ChangeExistingRecipecaloriesToInvalidNum()
+        {
+            int recipeid = GetExistingRecipeID();
+            int calories = SQLUtility.GetFirstColumnFirstRowValue("select RecipeCalories from recipe where recipeid = " + recipeid);
+            int newcalories = 0;
+            TestContext.WriteLine("change calories for recipeid " + recipeid + " from "+calories + " to " + newcalories);
+            DataTable dt = Recipe.Load(recipeid);
+            dt.Rows[0]["RecipeCalories"] = newcalories;
+            Exception ex = Assert.Throws<Exception>(() => Recipe.Save(dt), "RecipeCalories Must Be greater than zero");
+            TestContext.WriteLine(ex.Message);
+        }
+        [Test]
+        public void ChangeExistingRecipeDateDraftedToInvalidDate()
+        {
+            int recipeid = GetExistingRecipeID();
+            int date = SQLUtility.GetFirstColumnFirstRowValue("select RecipeDateDrafted from recipe where recipeid = " + recipeid);
+            DateTime newdate = DateTime.Now.AddDays(1);
+            TestContext.WriteLine("change date drafted for recipeid " + recipeid + " from " + date + " to " + newdate);
+            DataTable dt = Recipe.Load(recipeid);
+            dt.Rows[0]["RecipeDateDrafted"] = newdate;
+            Exception ex = Assert.Throws<Exception>(() => Recipe.Save(dt), "DateDrafted must be equal to or less than then current date");
+            TestContext.WriteLine(ex.Message);
+        }
+        [Test]
+        public void ChangeExistingRecipeNameToExistingName()
+        {
+            int recipeid = GetExistingRecipeID();
+            int date = SQLUtility.GetFirstColumnFirstRowValue("select RecipeDateDrafted from recipe where recipeid = " + recipeid);
+            DateTime newdate = DateTime.Now.AddDays(1);
+            TestContext.WriteLine("change date drafted for recipeid " + recipeid + " from " + date + " to " + newdate);
+            DataTable dt = Recipe.Load(recipeid);
+            dt.Rows[0]["RecipeDateDrafted"] = newdate;
+            Exception ex = Assert.Throws<Exception>(() => Recipe.Save(dt), "DateDrafted must be equal to or less than then current date");
+            TestContext.WriteLine(ex.Message);
+        }
         [Test]
         public void DeleteRecipe()
         {
