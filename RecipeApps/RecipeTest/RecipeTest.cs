@@ -9,7 +9,6 @@ namespace RecipeTest
         {
             DBManager.SetConnectionString("Server=.\\SQLExpress;Database=RecipeDB;Trusted_Connection=true");
         }
-
         [Test]
         [TestCase("spongecake", 1000, "2023-1-1")]
         [TestCase("sugarcookie", 2000, "2023-1-2")]
@@ -66,7 +65,7 @@ namespace RecipeTest
         public void ChangeExistingRecipeDateDraftedToInvalidDate()
         {
             int recipeid = GetExistingRecipeID();
-            int date = SQLUtility.GetFirstColumnFirstRowValue("select RecipeDateDrafted from recipe where recipeid = " + recipeid);
+            string date = SQLUtility.GetFirstColumnFirstRowValueAsString("select RecipeDateDrafted from recipe where recipeid = " + recipeid);
             DateTime newdate = DateTime.Now.AddDays(1);
             TestContext.WriteLine("change date drafted for recipeid " + recipeid + " from " + date + " to " + newdate);
             DataTable dt = Recipe.Load(recipeid);
@@ -78,12 +77,12 @@ namespace RecipeTest
         public void ChangeExistingRecipeNameToExistingName()
         {
             int recipeid = GetExistingRecipeID();
-            int date = SQLUtility.GetFirstColumnFirstRowValue("select RecipeDateDrafted from recipe where recipeid = " + recipeid);
-            DateTime newdate = DateTime.Now.AddDays(1);
-            TestContext.WriteLine("change date drafted for recipeid " + recipeid + " from " + date + " to " + newdate);
+            string name = SQLUtility.GetFirstColumnFirstRowValueAsString("select RecipeName from recipe where recipeid = " + recipeid);
+            string newname = SQLUtility.GetFirstColumnFirstRowValueAsString("select RecipeName from recipe where recipeid <> " + recipeid);
+            TestContext.WriteLine("change date drafted for recipeid " + recipeid + " from " + name + " to " + newname);
             DataTable dt = Recipe.Load(recipeid);
-            dt.Rows[0]["RecipeDateDrafted"] = newdate;
-            Exception ex = Assert.Throws<Exception>(() => Recipe.Save(dt), "DateDrafted must be equal to or less than then current date");
+            dt.Rows[0]["RecipeName"] = newname;
+            Exception ex = Assert.Throws<Exception>(() => Recipe.Save(dt), "RecipeName must be unique");
             TestContext.WriteLine(ex.Message);
         }
         [Test]
@@ -105,7 +104,24 @@ namespace RecipeTest
             Assert.IsTrue(dtafterdelete.Rows.Count == 0, "record with recipeid " + recipeid + " exists in DB");
             TestContext.WriteLine("Record with recipeid " + recipeid + " does not exist in DB");
         }
+        [Test]
+        public void DeleteRecipeWithRecipeIngredient()
+        {
+            DataTable dt = SQLUtility.GetDataTable("select top 1 r.RecipeID, RecipeName, RecipeCalories from Recipe r join RecipeIngredient i on r.RecipeID = i.RecipeID");
+            int recipeid = 0;
+            string recipedesc = "";
+            if (dt.Rows.Count > 0)
+            {
+                recipeid = (int)dt.Rows[0]["recipeid"];
+                recipedesc = dt.Rows[0]["RecipeName"] + " " + dt.Rows[0]["RecipeCalories"];
+            }
+            Assume.That(recipeid > 0, "No recipes with recipe  ingredients in DB, can't run test");
+            TestContext.WriteLine("Exsiting recipe with recipe ingredients, with id = " + recipeid + " " + recipedesc);
+            TestContext.WriteLine("Ensure that app cannot delete recipeid " + recipeid);
 
+            Exception ex = Assert.Throws<Exception>(() => Recipe.Delete(dt));
+            TestContext.WriteLine(ex.Message);
+        }
         [Test]
         public void LoadRecipe()
         {
@@ -118,7 +134,6 @@ namespace RecipeTest
             Assert.IsTrue(loadedid == recipeid, loadedid + "<>" + recipeid);
             TestContext.WriteLine("Loaded recipe (" + loadedid + ") " + recipeid);
         }
-
         [Test]
         public void GetListOfUsers()
         {
@@ -130,7 +145,6 @@ namespace RecipeTest
             Assert.IsTrue(dt.Rows.Count == userscount, "Num rows return by app (" + dt.Rows.Count + ") <>" + userscount);
             TestContext.WriteLine("Number of rows in users returned by app = " + dt.Rows.Count);
         }
-
         [Test]
         public void GetListOfCuisines()
         {
@@ -142,7 +156,6 @@ namespace RecipeTest
             Assert.IsTrue(dt.Rows.Count == cuisinecount, "Num rows return by app (" + dt.Rows.Count + ") <>" + cuisinecount);
             TestContext.WriteLine("Number of rows in cuisines returned by app = " + dt.Rows.Count);
         }
-
         private int GetExistingRecipeID()
         {
             return SQLUtility.GetFirstColumnFirstRowValue("select top 1 Recipeid from recipe");
