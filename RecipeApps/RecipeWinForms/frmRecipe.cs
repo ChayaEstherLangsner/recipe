@@ -44,7 +44,7 @@ namespace RecipeWinForms
         }
         private void Delete()
         {
-            var response = MessageBox.Show("Are you sure you want to delete this president?", "Record Keeper", MessageBoxButtons.YesNo);
+            var response = MessageBox.Show("Are you sure you want to delete this Recipe?", "Recipe", MessageBoxButtons.YesNo);
             if (response == DialogResult.No)
             {
                 return;
