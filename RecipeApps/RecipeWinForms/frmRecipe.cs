@@ -58,7 +58,7 @@ namespace RecipeWinForms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Record Keeper");
+                MessageBox.Show(ex.Message, "Recipe");
             }
             finally
             {
@@ -80,7 +80,7 @@ namespace RecipeWinForms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Record Keeper");
+                MessageBox.Show(ex.Message, "Recipe");
             }
             finally
             {
