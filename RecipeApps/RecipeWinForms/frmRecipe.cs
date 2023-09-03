@@ -17,16 +17,19 @@ namespace RecipeWinForms
     public partial class frmRecipe : Form
     {
         DataTable dtrecipe;
+        BindingSource bindsource = new BindingSource();
         public frmRecipe()
         { 
             InitializeComponent();
             btnSave.Click += BtnSave_Click;
             BtnDelete.Click += BtnDelete_Click;
+            //txtRecipeName.DataBindings.DefaultDataSourceUpdateMode = DataSourceUpdateMode.OnPropertyChanged;
         }
 
         public void ShowForm(int recipeid)
         {
             dtrecipe = Recipe.Load(recipeid);
+            bindsource.DataSource = dtrecipe;
             if (recipeid == 0)
             {
                 dtrecipe.Rows.Add();
@@ -35,11 +38,11 @@ namespace RecipeWinForms
             DataTable dtcuisine = Recipe.GetCuisineList();
             WindowsFormsUtility.SetListBinding(lstUserName, dtusers, dtrecipe, "Users");
             WindowsFormsUtility.SetListBinding(lstCuisineType, dtcuisine, dtrecipe, "Cuisine");
-            WindowsFormsUtility.SetControlBindings(txtRecipeName, dtrecipe);
-            WindowsFormsUtility.SetControlBindings(txtRecipeCalories, dtrecipe);
-            WindowsFormsUtility.SetControlBindings(dtpRecipeDateDrafted, dtrecipe);
-            WindowsFormsUtility.SetControlBindings(txtRecipeDatePublished, dtrecipe);
-            WindowsFormsUtility.SetControlBindings(txtRecipeDateArchived, dtrecipe);
+            WindowsFormsUtility.SetControlBindings(txtRecipeName, bindsource);
+            WindowsFormsUtility.SetControlBindings(txtRecipeCalories, bindsource);
+            WindowsFormsUtility.SetControlBindings(dtpRecipeDateDrafted, bindsource);
+            WindowsFormsUtility.SetControlBindings(txtRecipeDatePublished, bindsource);
+            WindowsFormsUtility.SetControlBindings(txtRecipeDateArchived, bindsource);
             this.Show();
         }
         private void Delete()
@@ -77,6 +80,8 @@ namespace RecipeWinForms
             try
             {
                 Recipe.Save(dtrecipe);
+
+                bindsource.ResetBindings(false);
             }
             catch (Exception ex)
             {
