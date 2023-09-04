@@ -9,7 +9,7 @@ select NumOfIngredients = count(ri.IngredientID), ri.RecipeID
 from RecipeIngredient ri
 group by ri.RecipeID
 ),
-stepamounts as(
+stepamounts as( 
 select NumOfSteps = count(rn.RecipeInstructionID), rn.RecipeID
 from RecipeInstruction rn
 group by rn.RecipeID
