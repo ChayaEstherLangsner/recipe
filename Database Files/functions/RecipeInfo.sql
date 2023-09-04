@@ -1,3 +1,4 @@
+--AF Nice work!  Please format the function by indenting as I recommended in other places
 create or alter function dbo.RecipeInfo(@RecipeID int)
 returns varchar (120)
 as
@@ -15,6 +16,7 @@ from RecipeInstruction rn
 group by rn.RecipeID
 )
 
+--AF What you did above works, but can be shortened.  It would be neater to drop the ctes.  You can just select the distinct count of recipeingredientid here, same for recipe steps
 select @Value = concat( r.RecipeName, ' (', c.CuisineType ,') has ', ia.NumOfIngredients, ' ingredients and ', sa.NumOfSteps, ' steps.')
 from Recipe r 
 join Cuisine c
@@ -26,6 +28,7 @@ on ia.RecipeID = r.RecipeID
 join stepamounts sa
 on sa.RecipeID = r.RecipeID
 where r.RecipeID = @RecipeID
+--AF PLease remove the extra line breaks below, one line break is enough
 
 
 
@@ -36,4 +39,5 @@ go
 
 select RecipeInfo = dbo.RecipeInfo(r.RecipeID)
 from Recipe r 
+
 
