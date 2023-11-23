@@ -12,13 +12,10 @@ namespace RecipeSystem
 {
     public class Recipe
     {
-        public static DataTable SearchforRecipes(string RecipeName)
+        public static DataTable GetRecipeSummary()
         {
-            DataTable dt = new();
-            SqlCommand cmd = SQLUtility.GetSQLCommand("RecipeGet");
-            cmd.Parameters["@RecipeName"].Value = RecipeName;
-            dt = SQLUtility.GetDataTable(cmd);
-            return dt;
+            SqlCommand cmd = SQLUtility.GetSQLCommand("RecipeSummaryGet");
+            return SQLUtility.GetDataTable(cmd);
         }
         public static DataTable Load(int recipeid)
         {

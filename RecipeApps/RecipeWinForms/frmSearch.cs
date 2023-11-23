@@ -9,52 +9,64 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CPUWindowsFormFramework;
+using System.Xml.Linq;
 using RecipeSystem;
 
 namespace RecipeWinForms
 {
     public partial class frmSearch : Form
     {
-        public frmSearch()
+        string formtype = "";
+        public frmSearch(string datasource)
         {
-            InitializeComponent(); 
-            btnSearch.Click += BtnSearch_Click;
-            gRecipe.CellDoubleClick += gRecipe_CellDoubleClick;
+            InitializeComponent();
+            gMain.CellDoubleClick += gRecipe_CellDoubleClick;
             btnNew.Click += BtnNew_Click;
             FormatGrid();
+            formtype = datasource;
+            SetBtnText(formtype);
+            this.Activated += FrmSearch_Activated;
+        }
+        private void BindData()
+        {
+            if (formtype == "recipe")
+            {
+                gMain.DataSource = Recipe.GetRecipeSummary();
+                WindowsFormsUtility.FormatGridForSearchResults(gMain, "Recipe");
+            }
         }
 
-        private void SearchForRecipe(string RecipeName)
+        private void FrmSearch_Activated(object? sender, EventArgs e)
         {
-            DataTable dt = Recipe.SearchforRecipes(RecipeName);
-            gRecipe.DataSource = dt;
-            gRecipe.Columns["RecipeID"].Visible = false;
+            BindData(); 
         }
+
+        private void SetBtnText(string datasource)
+        { btnNew.Text = (datasource == "recipe") ? "New Recipe" : "New Cookbook"; }
+
         private void ShowRecipeForm(int rowindex)
         {
             int id = 0;
             if (rowindex > -1)
             {
-                id = (int)gRecipe.Rows[rowindex].Cells["RecipeID"].Value;
+                id = (int)gMain.Rows[rowindex].Cells["RecipeID"].Value;
             }
             frmRecipe frm = new frmRecipe();
             frm.ShowForm(id);
         }
         private void FormatGrid()
         {
-            gRecipe.AllowUserToAddRows = false; 
-            gRecipe.ReadOnly = true;
-            gRecipe.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            gRecipe.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            gMain.AllowUserToAddRows = false; 
+            gMain.ReadOnly = true;
+            gMain.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            gMain.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
         private void gRecipe_CellDoubleClick(object? sender, DataGridViewCellEventArgs e)
         {
             ShowRecipeForm(e.RowIndex);
         }
-        private void BtnSearch_Click(object? sender, EventArgs e)
-        {
-            SearchForRecipe(txtRecipeName.Text);
-        }
+
         private void BtnNew_Click(object? sender, EventArgs e)
         {
             ShowRecipeForm(-1);
