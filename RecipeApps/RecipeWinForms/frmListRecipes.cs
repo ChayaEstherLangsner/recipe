@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,26 +14,20 @@ using RecipeSystem;
 
 namespace RecipeWinForms
 {
-    public partial class frmSearch : Form
+    public partial class frmListRecipes : Form
     {
-        string formtype = "";
-        public frmSearch(string datasource)
+        public frmListRecipes()
         {
             InitializeComponent();
             gMain.CellDoubleClick += gRecipe_CellDoubleClick;
             btnNew.Click += BtnNew_Click;
             FormatGrid();
-            formtype = datasource;
-            SetBtnText(formtype);
             this.Activated += FrmSearch_Activated;
         }
         private void BindData()
         {
-            if (formtype == "recipe")
-            {
                 gMain.DataSource = Recipe.GetRecipeSummary();
                 WindowsFormsUtility.FormatGridForSearchResults(gMain, "Recipe");
-            }
         }
 
         private void FrmSearch_Activated(object? sender, EventArgs e)
@@ -42,8 +35,6 @@ namespace RecipeWinForms
             BindData(); 
         }
 
-        private void SetBtnText(string datasource)
-        { btnNew.Text = (datasource == "recipe") ? "New Recipe" : "New Cookbook"; }
 
         private void ShowRecipeForm(int rowindex)
         {

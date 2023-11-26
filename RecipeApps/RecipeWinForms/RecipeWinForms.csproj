@@ -13,4 +13,13 @@
     <ProjectReference Include="..\RecipeSystem\RecipeSystem.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="frmListCookbooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmListMeals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>

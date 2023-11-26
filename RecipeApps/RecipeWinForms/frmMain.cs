@@ -13,20 +13,24 @@ namespace RecipeWinForms
 {
     public partial class frmMain : Form
     {
-        string listtype = "";
         public frmMain()
         {
             InitializeComponent();
             mnuRecipeList.Click += MnuRecipeList_Click;
+            mnuCookbookList.Click += MnuCookbookList_Click;
             mnuWindowTile.Click += MnuWindowTile_Click;
             mnuWindowCascade.Click += MnuWindowCascade_Click;
             this.Shown += FrmMain_Shown;
         }
 
+        private void MnuCookbookList_Click(object? sender, EventArgs e)
+        {
+            OpenForm(typeof(frmListRecipes));
+        }
+
         private void MnuRecipeList_Click(object? sender, EventArgs e)
         {
-            listtype = "recipe";
-            OpenForm(typeof(frmSearch));
+            OpenForm(typeof(frmListRecipes));
         }
 
         private void FrmMain_Shown(object? sender, EventArgs e)
@@ -40,20 +44,26 @@ namespace RecipeWinForms
             if (b == false)
             {
                 Form? newfrm = null;
-                if (frmtype == typeof(frmSearch) && listtype == "recipe")
+                if (frmtype == typeof(frmListRecipes))
                 {
-                    frmSearch f = new frmSearch(listtype);
+                    frmListRecipes f = new frmListRecipes();
                     newfrm = f;
                    // f.LoadForm(pkvalue);
                 }
-                if (frmtype == typeof(frmRecipe))
+                else if (frmtype == typeof(frmListRecipes))
+                {
+                    frmListRecipes f = new frmListRecipes();
+                    newfrm = f;
+                    // f.LoadForm(pkvalue);
+                }
+                else if (frmtype == typeof(frmRecipe))
                 {
                     frmRecipe f = new frmRecipe();
                     newfrm = f;
 
                 }
 
-                if (newfrm != null)
+                if (newfrm != null )
                 {
                     newfrm.MdiParent = this;
                     newfrm.WindowState = FormWindowState.Maximized;
