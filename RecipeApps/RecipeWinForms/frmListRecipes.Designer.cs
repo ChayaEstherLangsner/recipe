@@ -80,6 +80,7 @@
             this.ClientSize = new System.Drawing.Size(597, 509);
             this.Controls.Add(this.tblMain);
             this.Name = "frmListRecipes";
+            this.Text = "List Recipes";
             this.tblMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gMain)).EndInit();
             this.ResumeLayout(false);

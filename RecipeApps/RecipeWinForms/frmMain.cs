@@ -16,16 +16,28 @@ namespace RecipeWinForms
         public frmMain()
         {
             InitializeComponent();
+            mnuDashboard.Click += MnuDashboard_Click;
             mnuRecipeList.Click += MnuRecipeList_Click;
             mnuCookbookList.Click += MnuCookbookList_Click;
+            mnuMealList.Click += MnuMealList_Click;
             mnuWindowTile.Click += MnuWindowTile_Click;
             mnuWindowCascade.Click += MnuWindowCascade_Click;
             this.Shown += FrmMain_Shown;
         }
 
+        private void MnuDashboard_Click(object? sender, EventArgs e)
+        {
+            OpenForm(typeof(frmDashboard));
+        }
+
+        private void MnuMealList_Click(object? sender, EventArgs e)
+        {
+            OpenForm(typeof(frmListMeals));
+        }
+
         private void MnuCookbookList_Click(object? sender, EventArgs e)
         {
-            OpenForm(typeof(frmListRecipes));
+            OpenForm(typeof(frmListCookbooks));
         }
 
         private void MnuRecipeList_Click(object? sender, EventArgs e)
@@ -35,7 +47,7 @@ namespace RecipeWinForms
 
         private void FrmMain_Shown(object? sender, EventArgs e)
         {
-            //OpenForm(typeof(frmDashboard));
+            OpenForm(typeof(frmDashboard));
         }
         public void OpenForm(Type frmtype, int pkvalue = 0)
         {
@@ -50,9 +62,21 @@ namespace RecipeWinForms
                     newfrm = f;
                    // f.LoadForm(pkvalue);
                 }
-                else if (frmtype == typeof(frmListRecipes))
+                else if (frmtype == typeof(frmListCookbooks))
                 {
-                    frmListRecipes f = new frmListRecipes();
+                    frmListCookbooks f = new frmListCookbooks();
+                    newfrm = f;
+                    // f.LoadForm(pkvalue);
+                }
+                else if (frmtype == typeof(frmListMeals))
+                {
+                    frmListMeals f = new frmListMeals();
+                    newfrm = f;
+                    // f.LoadForm(pkvalue);
+                }
+                else if (frmtype == typeof(frmDashboard))
+                {
+                    frmDashboard f = new frmDashboard();
                     newfrm = f;
                     // f.LoadForm(pkvalue);
                 }

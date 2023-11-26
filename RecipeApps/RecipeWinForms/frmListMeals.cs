@@ -15,9 +15,9 @@ using RecipeSystem;
 
 namespace RecipeWinForms
 {
-    public partial class frmlistMeals : Form
+    public partial class frmListMeals : Form
     {
-        public frmlistMeals()
+        public frmListMeals()
         {
             InitializeComponent();
             FormatGrid();

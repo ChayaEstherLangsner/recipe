@@ -1,6 +1,6 @@
 ﻿namespace RecipeWinForms
 {
-    partial class frmlistMeals
+    partial class frmListMeals
     {
         /// <summary>
         /// Required designer variable.
@@ -60,13 +60,14 @@
             this.gMain.Size = new System.Drawing.Size(591, 503);
             this.gMain.TabIndex = 1;
             // 
-            // frmlistMeals
+            // frmListMeals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(597, 509);
             this.Controls.Add(this.tblMain);
-            this.Name = "frmlistMeals";
+            this.Name = "frmListMeals";
+            this.Text = "List Meals";
             this.tblMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gMain)).EndInit();
             this.ResumeLayout(false);
