@@ -31,10 +31,10 @@
             this.tblMain = new System.Windows.Forms.TableLayoutPanel();
             this.lblAppName = new System.Windows.Forms.Label();
             this.lblDesc = new System.Windows.Forms.Label();
-            this.gOverview = new System.Windows.Forms.DataGridView();
             this.btnRecipeList = new System.Windows.Forms.Button();
             this.btnMealList = new System.Windows.Forms.Button();
             this.btnCookbookList = new System.Windows.Forms.Button();
+            this.gOverview = new System.Windows.Forms.DataGridView();
             this.tblMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gOverview)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +50,7 @@
             this.tblMain.Controls.Add(this.btnRecipeList, 0, 3);
             this.tblMain.Controls.Add(this.btnMealList, 1, 3);
             this.tblMain.Controls.Add(this.btnCookbookList, 2, 3);
-            this.tblMain.Controls.Add(this.gOverview, 0, 2);
+            this.tblMain.Controls.Add(this.gOverview, 1, 2);
             this.tblMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblMain.Location = new System.Drawing.Point(0, 0);
             this.tblMain.Name = "tblMain";
@@ -89,19 +89,6 @@
     "cookbooks. You can also....";
             this.lblDesc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // gOverview
-            // 
-            this.gOverview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tblMain.SetColumnSpan(this.gOverview, 3);
-            this.gOverview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gOverview.Location = new System.Drawing.Point(200, 290);
-            this.gOverview.Margin = new System.Windows.Forms.Padding(200, 0, 200, 0);
-            this.gOverview.Name = "gOverview";
-            this.gOverview.RowHeadersWidth = 51;
-            this.gOverview.RowTemplate.Height = 29;
-            this.gOverview.Size = new System.Drawing.Size(442, 145);
-            this.gOverview.TabIndex = 2;
-            // 
             // btnRecipeList
             // 
             this.btnRecipeList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -134,6 +121,20 @@
             this.btnCookbookList.TabIndex = 5;
             this.btnCookbookList.Text = "Cookbook List";
             this.btnCookbookList.UseVisualStyleBackColor = true;
+            // 
+            // gOverview
+            // 
+            this.gOverview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gOverview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gOverview.Location = new System.Drawing.Point(319, 290);
+            this.gOverview.Margin = new System.Windows.Forms.Padding(39, 0, 39, 10);
+            this.gOverview.Name = "gOverview";
+            this.gOverview.RowHeadersWidth = 51;
+            this.gOverview.RowTemplate.Height = 29;
+            this.gOverview.Size = new System.Drawing.Size(202, 135);
+            this.gOverview.TabIndex = 2;
             // 
             // frmDashboard
             // 

@@ -21,7 +21,6 @@ namespace RecipeWinForms
             InitializeComponent();
             gMain.CellDoubleClick += gRecipe_CellDoubleClick;
             btnNew.Click += BtnNew_Click;
-            FormatGrid();
             this.Activated += FrmSearch_Activated;
         }
         private void BindData()
@@ -45,13 +44,6 @@ namespace RecipeWinForms
             }
             frmRecipe frm = new frmRecipe();
             frm.ShowForm(id);
-        }
-        private void FormatGrid()
-        {
-            gMain.AllowUserToAddRows = false; 
-            gMain.ReadOnly = true;
-            gMain.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            gMain.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
         private void gRecipe_CellDoubleClick(object? sender, DataGridViewCellEventArgs e)
         {

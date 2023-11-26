@@ -62,7 +62,8 @@
             this.mnuWindow});
             this.mnuMain.Location = new System.Drawing.Point(0, 0);
             this.mnuMain.Name = "mnuMain";
-            this.mnuMain.Size = new System.Drawing.Size(800, 28);
+            this.mnuMain.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
+            this.mnuMain.Size = new System.Drawing.Size(1100, 30);
             this.mnuMain.TabIndex = 0;
             this.mnuMain.Text = "menuStrip1";
             // 
@@ -188,21 +189,23 @@
             // tsMain
             // 
             this.tsMain.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.tsMain.Location = new System.Drawing.Point(0, 28);
+            this.tsMain.Location = new System.Drawing.Point(0, 30);
             this.tsMain.Name = "tsMain";
-            this.tsMain.Size = new System.Drawing.Size(800, 25);
+            this.tsMain.Size = new System.Drawing.Size(1100, 25);
             this.tsMain.TabIndex = 1;
             this.tsMain.Text = "toolStrip1";
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1100, 630);
             this.Controls.Add(this.tsMain);
             this.Controls.Add(this.mnuMain);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnuMain;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmMain";
             this.Text = "Recipe";
             this.mnuMain.ResumeLayout(false);
