@@ -20,27 +20,19 @@ namespace RecipeWinForms
         public frmListMeals()
         {
             InitializeComponent();
-            FormatGrid();
-            this.Activated += FrmSearch_Activated;
+            this.Activated += FrmListMeals_Activated;
         }
+
         private void BindData()
         {
-                gMain.DataSource = Recipe.GetRecipeSummary();
-                WindowsFormsUtility.FormatGridForSearchResults(gMain, "Meal");
+            gMain.DataSource = Meal.GetMealSummary();
+            WindowsFormsUtility.FormatGridForSearchResults(gMain, "Meal");
         }
 
-        private void FrmSearch_Activated(object? sender, EventArgs e)
+        private void FrmListMeals_Activated(object? sender, EventArgs e)
         {
-            BindData(); 
+            BindData();
         }
-        private void FormatGrid()
-        {
-            gMain.AllowUserToAddRows = false; 
-            gMain.ReadOnly = true;
-            gMain.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            gMain.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        }
-
     }
 
 }

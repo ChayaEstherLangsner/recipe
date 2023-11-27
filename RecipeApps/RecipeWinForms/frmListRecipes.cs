@@ -21,17 +21,18 @@ namespace RecipeWinForms
             InitializeComponent();
             gMain.CellDoubleClick += gRecipe_CellDoubleClick;
             btnNew.Click += BtnNew_Click;
-            this.Activated += FrmSearch_Activated;
+            this.Activated += FrmListRecipes_Activated;
         }
+
         private void BindData()
         {
                 gMain.DataSource = Recipe.GetRecipeSummary();
                 WindowsFormsUtility.FormatGridForSearchResults(gMain, "Recipe");
         }
 
-        private void FrmSearch_Activated(object? sender, EventArgs e)
+        private void FrmListRecipes_Activated(object? sender, EventArgs e)
         {
-            BindData(); 
+            BindData();
         }
 
 

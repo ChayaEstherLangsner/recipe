@@ -22,19 +22,21 @@ namespace RecipeWinForms
             InitializeComponent();
             gMain.CellDoubleClick += gRecipe_CellDoubleClick;
             btnNew.Click += BtnNew_Click;
-            FormatGrid();
-            this.Activated += FrmSearch_Activated;
-        }
-        private void BindData()
-        {
-                    gMain.DataSource = Recipe.GetRecipeSummary();
-                    WindowsFormsUtility.FormatGridForSearchResults(gMain, "Cookbook");
+            this.Activated += FrmListCookbooks_Activated;
         }
 
-        private void FrmSearch_Activated(object? sender, EventArgs e)
+        private void FrmListCookbooks_Activated(object? sender, EventArgs e)
         {
-            BindData(); 
+            BindData();
         }
+
+        private void BindData()
+        {
+            gMain.DataSource = Cookbook.GetCookookSummary();
+            WindowsFormsUtility.FormatGridForSearchResults(gMain, "Cookbook");
+        }
+
+
 
         private void ShowRecipeForm(int rowindex)
         {
@@ -45,13 +47,6 @@ namespace RecipeWinForms
             }
             frmRecipe frm = new frmRecipe();
             frm.ShowForm(id);
-        }
-        private void FormatGrid()
-        {
-            gMain.AllowUserToAddRows = false; 
-            gMain.ReadOnly = true;
-            gMain.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            gMain.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
         private void gRecipe_CellDoubleClick(object? sender, DataGridViewCellEventArgs e)
         {
