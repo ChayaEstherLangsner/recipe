@@ -31,7 +31,7 @@ namespace RecipeSystem
         public static void DeleteRow(string tablename, int id)
         {
             SqlCommand cmd = SQLUtility.GetSQLCommand(tablename + "Delete");
-            SQLUtility.SetParamValue(cmd, $"@{tablename}ID", id);
+            SQLUtility.SetParamValue(cmd, $"@{tablename}Id", id);
             SQLUtility.ExecuteSQL(cmd);
         }
     }

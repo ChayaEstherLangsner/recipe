@@ -2,13 +2,14 @@ create or alter proc RecipeSummaryGet
  (@Message varchar (500) = '' output) 
 
  as
-select r.RecipeID, RecipeName, RecipeStatus, UserName = concat(UserFirstName, ' ', UserLastName), RecipeCalories, numIngredients = count(ri.RecipeIngredientID)
+select r.RecipeId, RecipeName, RecipeStatus, UserName = concat(UserFirstName, ' ', UserLastName), RecipeCalories, NumIngredients = count(ri.RecipeIngredientId)
 from Users u 
 left join Recipe r  
-on r.UsersID = u.UsersID
+on r.UsersId = u.UsersId
 left join RecipeIngredient ri 
-on ri.RecipeID = r.RecipeID
-group by r.RecipeID, RecipeName, RecipeStatus, UserFirstName, UserLastName, RecipeCalories
+on ri.RecipeId = r.RecipeId
+where RecipeName is not null
+group by r.RecipeId, RecipeName, RecipeStatus, UserFirstName, UserLastName, RecipeCalories
 order by RecipeStatus desc
  go 
  exec RecipeSummaryGet

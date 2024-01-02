@@ -46,7 +46,7 @@ namespace RecipeWinForms
                 id = (int)gMain.Rows[rowindex].Cells["RecipeID"].Value;
             }
             frmRecipe frm = new frmRecipe();
-            frm.ShowForm(id);
+            frm.LoadForm(id);
         }
         private void gRecipe_CellDoubleClick(object? sender, DataGridViewCellEventArgs e)
         {

@@ -12,10 +12,12 @@ using CPUWindowsFormFramework;
 using System.Xml.Linq;
 using RecipeSystem;
 
+
 namespace RecipeWinForms
 {
     public partial class frmListRecipes : Form
     {
+        
         public frmListRecipes()
         {
             InitializeComponent();
@@ -41,10 +43,12 @@ namespace RecipeWinForms
             int id = 0;
             if (rowindex > -1)
             {
-                id = (int)gMain.Rows[rowindex].Cells["RecipeID"].Value;
+                id = (int)gMain.Rows[rowindex].Cells["RecipeId"].Value;
             }
-            frmRecipe frm = new frmRecipe();
-            frm.ShowForm(id);
+            if (this.MdiParent != null && this.MdiParent is frmMain)
+            {
+                ((frmMain)this.MdiParent).OpenForm(typeof(frmRecipe), id);
+            }
         }
         private void gRecipe_CellDoubleClick(object? sender, DataGridViewCellEventArgs e)
         {

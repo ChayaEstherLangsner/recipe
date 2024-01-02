@@ -37,7 +37,7 @@ namespace RecipeTest
         [Test]
         public void ChangeExistingRecipecalories()
         {
-            int recipeid = GetExistingRecipeID();
+            int recipeid = GetExistingRecipeId();
             int calories = SQLUtility.GetFirstColumnFirstRowValue("select RecipeCalories from recipe where recipeid = " + recipeid);
             TestContext.WriteLine("calories for recipeid " + recipeid + " is " + calories);
             calories = calories + 1;
@@ -52,7 +52,7 @@ namespace RecipeTest
         [Test]
         public void ChangeExistingRecipecaloriesToInvalidNum()
         {
-            int recipeid = GetExistingRecipeID();
+            int recipeid = GetExistingRecipeId();
             int calories = SQLUtility.GetFirstColumnFirstRowValue("select RecipeCalories from recipe where recipeid = " + recipeid);
             int newcalories = 0;
             TestContext.WriteLine("change calories for recipeid " + recipeid + " from "+calories + " to " + newcalories);
@@ -64,7 +64,7 @@ namespace RecipeTest
         [Test]
         public void ChangeExistingRecipeDateDraftedToInvalidDate()
         {
-            int recipeid = GetExistingRecipeID();
+            int recipeid = GetExistingRecipeId();
             string date = SQLUtility.GetFirstColumnFirstRowValueAsString("select RecipeDateDrafted from recipe where recipeid = " + recipeid);
             DateTime newdate = DateTime.Now.AddDays(1);
             TestContext.WriteLine("change date drafted for recipeid " + recipeid + " from " + date + " to " + newdate);
@@ -76,7 +76,7 @@ namespace RecipeTest
         [Test]
         public void ChangeExistingRecipeNameToExistingName()
         {
-            int recipeid = GetExistingRecipeID();
+            int recipeid = GetExistingRecipeId();
             string name = SQLUtility.GetFirstColumnFirstRowValueAsString("select RecipeName from recipe where recipeid = " + recipeid);
             string newname = SQLUtility.GetFirstColumnFirstRowValueAsString("select RecipeName from recipe where recipeid <> " + recipeid);
             TestContext.WriteLine("change date drafted for recipeid " + recipeid + " from " + name + " to " + newname);
@@ -148,7 +148,7 @@ namespace RecipeTest
         [Test]
         public void LoadRecipe()
         {
-            int recipeid = GetExistingRecipeID();
+            int recipeid = GetExistingRecipeId();
             Assume.That(recipeid > 0, "No recipes in DB, can't run test");
             TestContext.WriteLine("Exsiting recipe with id = " + recipeid);
             TestContext.WriteLine("Ensure that app loads recipe " + recipeid);
@@ -179,7 +179,7 @@ namespace RecipeTest
             Assert.IsTrue(dt.Rows.Count == cuisinecount, "Num rows return by app (" + dt.Rows.Count + ") <>" + cuisinecount);
             TestContext.WriteLine("Number of rows in cuisines returned by app = " + dt.Rows.Count);
         }
-        private int GetExistingRecipeID()
+        private int GetExistingRecipeId()
         {
             return SQLUtility.GetFirstColumnFirstRowValue("select top 1 Recipeid from recipe");
         }

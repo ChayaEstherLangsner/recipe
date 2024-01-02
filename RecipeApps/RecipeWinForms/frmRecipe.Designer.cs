@@ -43,9 +43,9 @@
             this.lblCaptionDrafted = new System.Windows.Forms.Label();
             this.lblCaptionPublished = new System.Windows.Forms.Label();
             this.lblCaptionArchived = new System.Windows.Forms.Label();
-            this.txtDateArchived = new System.Windows.Forms.TextBox();
-            this.txtDatePublished = new System.Windows.Forms.TextBox();
-            this.txtDateDrafted = new System.Windows.Forms.TextBox();
+            this.txtRecipeDateArchived = new System.Windows.Forms.TextBox();
+            this.txtRecipeDateDrafted = new System.Windows.Forms.TextBox();
+            this.txtRecipeDatePublished = new System.Windows.Forms.TextBox();
             this.txtCurrentStatus = new System.Windows.Forms.TextBox();
             this.tRecipeDetails = new System.Windows.Forms.TabControl();
             this.tpIngredients = new System.Windows.Forms.TabPage();
@@ -222,9 +222,9 @@
             this.tblStatusDates.Controls.Add(this.lblCaptionDrafted, 0, 0);
             this.tblStatusDates.Controls.Add(this.lblCaptionPublished, 1, 0);
             this.tblStatusDates.Controls.Add(this.lblCaptionArchived, 2, 0);
-            this.tblStatusDates.Controls.Add(this.txtDateArchived, 2, 1);
-            this.tblStatusDates.Controls.Add(this.txtDatePublished, 0, 1);
-            this.tblStatusDates.Controls.Add(this.txtDateDrafted, 1, 1);
+            this.tblStatusDates.Controls.Add(this.txtRecipeDateArchived, 2, 1);
+            this.tblStatusDates.Controls.Add(this.txtRecipeDateDrafted, 0, 1);
+            this.tblStatusDates.Controls.Add(this.txtRecipeDatePublished, 1, 1);
             this.tblStatusDates.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblStatusDates.Location = new System.Drawing.Point(144, 243);
             this.tblStatusDates.Name = "tblStatusDates";
@@ -270,38 +270,38 @@
             this.lblCaptionArchived.Text = "Archived";
             this.lblCaptionArchived.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // txtDateArchived
+            // txtRecipeDateArchived
             // 
-            this.txtDateArchived.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtRecipeDateArchived.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDateArchived.Enabled = false;
-            this.txtDateArchived.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDateArchived.Location = new System.Drawing.Point(295, 31);
-            this.txtDateArchived.Name = "txtDateArchived";
-            this.txtDateArchived.Size = new System.Drawing.Size(142, 34);
-            this.txtDateArchived.TabIndex = 5;
+            this.txtRecipeDateArchived.Enabled = false;
+            this.txtRecipeDateArchived.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtRecipeDateArchived.Location = new System.Drawing.Point(295, 31);
+            this.txtRecipeDateArchived.Name = "txtRecipeDateArchived";
+            this.txtRecipeDateArchived.Size = new System.Drawing.Size(142, 34);
+            this.txtRecipeDateArchived.TabIndex = 5;
             // 
-            // txtDatePublished
+            // txtRecipeDateDrafted
             // 
-            this.txtDatePublished.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtRecipeDateDrafted.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDatePublished.Enabled = false;
-            this.txtDatePublished.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDatePublished.Location = new System.Drawing.Point(3, 31);
-            this.txtDatePublished.Name = "txtDatePublished";
-            this.txtDatePublished.Size = new System.Drawing.Size(140, 34);
-            this.txtDatePublished.TabIndex = 4;
+            this.txtRecipeDateDrafted.Enabled = false;
+            this.txtRecipeDateDrafted.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtRecipeDateDrafted.Location = new System.Drawing.Point(3, 31);
+            this.txtRecipeDateDrafted.Name = "txtRecipeDateDrafted";
+            this.txtRecipeDateDrafted.Size = new System.Drawing.Size(140, 34);
+            this.txtRecipeDateDrafted.TabIndex = 4;
             // 
-            // txtDateDrafted
+            // txtRecipeDatePublished
             // 
-            this.txtDateDrafted.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtRecipeDatePublished.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDateDrafted.Enabled = false;
-            this.txtDateDrafted.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDateDrafted.Location = new System.Drawing.Point(149, 31);
-            this.txtDateDrafted.Name = "txtDateDrafted";
-            this.txtDateDrafted.Size = new System.Drawing.Size(140, 34);
-            this.txtDateDrafted.TabIndex = 3;
+            this.txtRecipeDatePublished.Enabled = false;
+            this.txtRecipeDatePublished.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtRecipeDatePublished.Location = new System.Drawing.Point(149, 31);
+            this.txtRecipeDatePublished.Name = "txtRecipeDatePublished";
+            this.txtRecipeDatePublished.Size = new System.Drawing.Size(140, 34);
+            this.txtRecipeDatePublished.TabIndex = 3;
             // 
             // txtCurrentStatus
             // 
@@ -521,9 +521,9 @@
         private Label lblCaptionDrafted;
         private Label lblCaptionPublished;
         private Label lblCaptionArchived;
-        private TextBox txtDateDrafted;
-        private TextBox txtDatePublished;
-        private TextBox txtDateArchived;
+        private TextBox txtRecipeDatePublished;
+        private TextBox txtRecipeDateDrafted;
+        private TextBox txtRecipeDateArchived;
         private TextBox txtCurrentStatus;
         private TabControl tRecipeDetails;
         private TabPage tpIngredients;

@@ -1,30 +1,30 @@
 create or alter proc dbo.RecipeUpdate
 (
-@RecipeID int  output,
-@UsersID int,
-@CuisineID int,
+@RecipeId int  output,
+@UsersId int,
+@CuisineId int,
 @RecipeName varchar(50),
 @RecipeCalories int
 )
  as
  begin 
 
- select @RecipeID = isnull(@RecipeID, 0)
-if (@RecipeID = 0)
+ select @RecipeId = isnull(@RecipeId, 0)
+if (@RecipeId = 0)
 begin
- insert Recipe(RecipeName,UsersID , CuisineID, RecipeCalories)
- values (@RecipeName, @UsersID, @CuisineID, @RecipeCalories)
-select @RecipeID = SCOPE_IDENTITY()
+ insert Recipe(RecipeName,UsersId , CuisineId, RecipeCalories)
+ values (@RecipeName, @UsersId, @CuisineId, @RecipeCalories)
+select @RecipeId = SCOPE_IdENTITY()
  end
  else 
  begin
 update Recipe 
 set 
 RecipeName = @RecipeName,
-UsersID = @UsersID, 
-CuisineID = @CuisineID, 
+UsersId = @UsersId, 
+CuisineId = @CuisineId, 
 RecipeCalories = @RecipeCalories
-where RecipeID = @RecipeID
+where RecipeId = @RecipeId
 end
 
  end 
