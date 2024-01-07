@@ -35,4 +35,4 @@ begin
 	return @return
 end
 
-select * from RecipeIngredient
+

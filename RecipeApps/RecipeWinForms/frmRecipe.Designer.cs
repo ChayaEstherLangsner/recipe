@@ -46,7 +46,7 @@
             this.txtRecipeDateArchived = new System.Windows.Forms.TextBox();
             this.txtRecipeDateDrafted = new System.Windows.Forms.TextBox();
             this.txtRecipeDatePublished = new System.Windows.Forms.TextBox();
-            this.txtCurrentStatus = new System.Windows.Forms.TextBox();
+            this.txtRecipeStatus = new System.Windows.Forms.TextBox();
             this.tRecipeDetails = new System.Windows.Forms.TabControl();
             this.tpIngredients = new System.Windows.Forms.TabPage();
             this.tblIngredients = new System.Windows.Forms.TableLayoutPanel();
@@ -88,7 +88,7 @@
             this.tblMain.Controls.Add(this.lstUserName, 1, 2);
             this.tblMain.Controls.Add(this.lstCuisineType, 1, 3);
             this.tblMain.Controls.Add(this.tblStatusDates, 1, 6);
-            this.tblMain.Controls.Add(this.txtCurrentStatus, 1, 5);
+            this.tblMain.Controls.Add(this.txtRecipeStatus, 1, 5);
             this.tblMain.Controls.Add(this.tRecipeDetails, 0, 7);
             this.tblMain.Controls.Add(this.tblButtons, 0, 0);
             this.tblMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -303,15 +303,15 @@
             this.txtRecipeDatePublished.Size = new System.Drawing.Size(140, 34);
             this.txtRecipeDatePublished.TabIndex = 3;
             // 
-            // txtCurrentStatus
+            // txtRecipeStatus
             // 
-            this.txtCurrentStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtCurrentStatus.Enabled = false;
-            this.txtCurrentStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCurrentStatus.Location = new System.Drawing.Point(144, 203);
-            this.txtCurrentStatus.Name = "txtCurrentStatus";
-            this.txtCurrentStatus.Size = new System.Drawing.Size(440, 34);
-            this.txtCurrentStatus.TabIndex = 36;
+            this.txtRecipeStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtRecipeStatus.Enabled = false;
+            this.txtRecipeStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtRecipeStatus.Location = new System.Drawing.Point(144, 203);
+            this.txtRecipeStatus.Name = "txtRecipeStatus";
+            this.txtRecipeStatus.Size = new System.Drawing.Size(440, 34);
+            this.txtRecipeStatus.TabIndex = 36;
             // 
             // tRecipeDetails
             // 
@@ -524,7 +524,6 @@
         private TextBox txtRecipeDatePublished;
         private TextBox txtRecipeDateDrafted;
         private TextBox txtRecipeDateArchived;
-        private TextBox txtCurrentStatus;
         private TabControl tRecipeDetails;
         private TabPage tpIngredients;
         private TableLayoutPanel tblIngredients;
@@ -534,5 +533,6 @@
         private TableLayoutPanel tblSteps;
         private Button BtnSaveSteps;
         private DataGridView gSteps;
+        private TextBox txtRecipeStatus;
     }
 }
