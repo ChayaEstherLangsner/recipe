@@ -18,11 +18,7 @@ namespace RecipeWinForms
     public partial class frmChangeStatus : Form
     {
         DataTable dtrecipe;
-        string recipename;
         string status;
-        string datedrafted;
-        string datepublished;
-        string datearchived;
         int recipeid;
         BindingSource bindsource = new BindingSource();
 
@@ -32,7 +28,7 @@ namespace RecipeWinForms
             InitializeComponent();
             recipeid = recipeidval;
             LoadForm();
-            GetRecipeValues();
+            //GetRecipeValues();
             SetUpLabels();
 
 
@@ -42,11 +38,11 @@ namespace RecipeWinForms
             recipeid = SQLUtility.GetValueFromFirstRowAsInt(dtrecipe, "RecipeId");
             if (recipeid > 0)
             {
-                recipename = SQLUtility.GetValueFromFirstRowAsString(dtrecipe, "RecipeName");
-        //        status = SQLUtility.GetValueFromFirstRowAsString(dtrecipe, "RecipeStatus");
-                datedrafted = SQLUtility.GetValueFromFirstRowAsStringFromDate(dtrecipe, "RecipeDateDrafted");
-                datepublished = SQLUtility.GetValueFromFirstRowAsStringFromDate(dtrecipe, "RecipeDatePublished");
-                datearchived = SQLUtility.GetValueFromFirstRowAsStringFromDate(dtrecipe, "RecipeDateArchived");
+            //    recipename = SQLUtility.GetValueFromFirstRowAsString(dtrecipe, "RecipeName");
+                //status = SQLUtility.GetValueFromFirstRowAsString(dtrecipe, "RecipeStatus");
+                //datedrafted = SQLUtility.GetValueFromFirstRowAsStringFromDate(dtrecipe, "RecipeDateDrafted");
+                //datepublished = SQLUtility.GetValueFromFirstRowAsStringFromDate(dtrecipe, "RecipeDatePublished");
+                //datearchived = SQLUtility.GetValueFromFirstRowAsStringFromDate(dtrecipe, "RecipeDateArchived");
             }
           
         }
@@ -58,21 +54,16 @@ namespace RecipeWinForms
             WindowsFormsUtility.SetControlBindings(lblRecipeDateDrafted, bindsource);
             WindowsFormsUtility.SetControlBindings(lblRecipeDatePublished, bindsource);
             WindowsFormsUtility.SetControlBindings(lblRecipeDateArchived, bindsource);
-           // WindowsFormsUtility.SetControlBindings(lblRecipeStatus, bindsource);
+            WindowsFormsUtility.SetControlBindings(lblRecipeStatus, bindsource);
         }
         private void SetUpLabels()
         {
-            lblRecipeName.Text = recipename;
-            //lblCurrentStatus.Text = lblCurrentStatus.Text + " " + status;
-            ////string statusbtnname = "btn" + status;
-           //foreach (System.Windows.Forms.Button btn in tblBtns.Controls)
-           // {
-           //     if (btn.Name == statusbtnname)
-           //         btn.Enabled = false;
-           // }
-            //lblRecipeDateDrafted.Text = datedrafted;
-            //lblRecipeDatePublished.Text = datepublished;
-            //lblRecipeDateArchived.Text = datearchived;
+            string statusbtnname = "btn" + lblRecipeStatus.Text;
+            foreach (System.Windows.Forms.Button btn in tblBtns.Controls)
+            {
+                if (btn.Name == statusbtnname)
+                    btn.Enabled = false;
+            }
 
         }
         private void Save()
