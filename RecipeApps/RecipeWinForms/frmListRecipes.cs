@@ -22,8 +22,10 @@ namespace RecipeWinForms
         {
             InitializeComponent();
             gMain.CellDoubleClick += gRecipe_CellDoubleClick;
+            gMain.KeyDown += GMain_KeyDown;
             btnNew.Click += BtnNew_Click;
             this.Activated += FrmListRecipes_Activated;
+            
         }
 
         private void BindData()
@@ -53,6 +55,14 @@ namespace RecipeWinForms
         private void gRecipe_CellDoubleClick(object? sender, DataGridViewCellEventArgs e)
         {
             ShowRecipeForm(e.RowIndex);
+        }
+        private void GMain_KeyDown(object? sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && gMain.SelectedRows.Count > 0)
+            {
+                ShowRecipeForm(gMain.SelectedRows[0].Index);
+                e.SuppressKeyPress = true;
+            }
         }
 
         private void BtnNew_Click(object? sender, EventArgs e)

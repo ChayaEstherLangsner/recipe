@@ -262,6 +262,7 @@
             // 
             this.lblCurrentStatusCaption.AutoSize = true;
             this.lblCurrentStatusCaption.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblCurrentStatusCaption.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCurrentStatusCaption.Location = new System.Drawing.Point(3, 0);
             this.lblCurrentStatusCaption.Name = "lblCurrentStatusCaption";
             this.lblCurrentStatusCaption.Size = new System.Drawing.Size(391, 63);
@@ -273,12 +274,11 @@
             // 
             this.lblRecipeStatus.AutoSize = true;
             this.lblRecipeStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblRecipeStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblRecipeStatus.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblRecipeStatus.Location = new System.Drawing.Point(400, 0);
             this.lblRecipeStatus.Name = "lblRecipeStatus";
             this.lblRecipeStatus.Size = new System.Drawing.Size(391, 63);
             this.lblRecipeStatus.TabIndex = 1;
-            this.lblRecipeStatus.Text = "hi";
             this.lblRecipeStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmChangeStatus

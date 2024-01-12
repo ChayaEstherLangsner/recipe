@@ -12,7 +12,6 @@ create or alter proc dbo.RecipeUpdate
 )
  as
  begin 
- select * from Recipe
 
  select @RecipeId = isnull(@RecipeId, 0)
 if (@RecipeId = 0)

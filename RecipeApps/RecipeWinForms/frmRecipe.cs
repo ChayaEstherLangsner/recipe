@@ -24,7 +24,6 @@ namespace RecipeWinForms
             btnSaveIngredient.Click += BtnSaveIngredient_Click;
             BtnSaveSteps.Click += BtnSaveSteps_Click;
             btnChangeStatus.Click += BtnChangeStatus_Click;
-            
             this.Shown += FrmRecipe_Shown;
 
             //txtRecipeName.DataBindings.DefaultDataSourceUpdateMode = DataSourceUpdateMode.OnPropertyChanged;
@@ -97,7 +96,7 @@ namespace RecipeWinForms
 
         private void DeleteRecipeIngredient(int rowIndex)
         {
-            int id = WindowsFormsUtility.GetIdFromGrid(gIngredient, rowIndex, "IngredientId");
+            int id = WindowsFormsUtility.GetIdFromGrid(gIngredient, rowIndex, "RecipeIngredientId");
             if (id > 0)
             {
                 try
@@ -153,13 +152,6 @@ namespace RecipeWinForms
                 gSteps.Rows.RemoveAt(rowIndex);
             }
         }
-        //private void SetStatusBindings()
-        //{
-        //    WindowsFormsUtility.SetControlBindings(txtCurrentStatus, bindsource);
-        //    WindowsFormsUtility.SetControlBindings(txtRecipeDateDrafted, bindsource);
-        //    WindowsFormsUtility.SetControlBindings(txtRecipeDatePublished, bindsource);
-        //    WindowsFormsUtility.SetControlBindings(txtRecipeDateArchived, bindsource);
-        //}
         public void LoadForm(int recipeidval)
         {
             recipeid = recipeidval;
@@ -186,10 +178,6 @@ namespace RecipeWinForms
             SetButtonsEnabledBasedOnNewRecord();
             this.Show();
         }
-        private void SetStatusInfo()
-        {
-
-        }
         private void SetButtonsEnabledBasedOnNewRecord()
         {
             bool b = recipeid == 0 ? false : true;
@@ -198,8 +186,7 @@ namespace RecipeWinForms
         }
         private void BtnChangeStatus_Click(object? sender, EventArgs e)
         {
-            frmChangeStatus frmChangeStatus = new frmChangeStatus(recipeid);
-            frmChangeStatus.ShowDialog();
+            ((frmMain)this.MdiParent).OpenForm(typeof(frmChangeStatus), recipeid);
         }
         private void Delete()
         {

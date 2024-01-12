@@ -30,7 +30,7 @@ namespace RecipeSystem
         public static void Delete(int ingredientid)
         {
             SqlCommand cmd = SQLUtility.GetSQLCommand("RecipeIngredientDelete");
-            cmd.Parameters["@IngredientId"].Value = ingredientid;
+            cmd.Parameters["@RecipeIngredientId"].Value = ingredientid;
             SQLUtility.ExecuteSQL(cmd);
         }
     }
