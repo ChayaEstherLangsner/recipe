@@ -183,6 +183,8 @@ namespace RecipeWinForms
             bool b = recipeid == 0 ? false : true;
             BtnDelete.Enabled = b;
             btnSaveIngredient.Enabled = b;
+            btnChangeStatus.Enabled = b;
+            BtnSaveSteps.Enabled = b;
         }
         private void BtnChangeStatus_Click(object? sender, EventArgs e)
         {

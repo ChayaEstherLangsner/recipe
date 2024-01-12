@@ -21,6 +21,7 @@ namespace RecipeWinForms
         {
             InitializeComponent();
             gMain.CellDoubleClick += gMain_CellDoubleClick;
+            gMain.KeyDown += GMain_KeyDown;
             btnNew.Click += BtnNew_Click;
             this.Activated += FrmListCookbooks_Activated;
         }
@@ -51,7 +52,14 @@ namespace RecipeWinForms
         {
             ShowCookbookForm(e.RowIndex);
         }
-
+        private void GMain_KeyDown(object? sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && gMain.SelectedRows.Count > 0)
+            {
+                ShowCookbookForm(gMain.SelectedRows[0].Index);
+                e.SuppressKeyPress = true;
+            }
+        }
         private void BtnNew_Click(object? sender, EventArgs e)
         {
             ShowCookbookForm(-1);
