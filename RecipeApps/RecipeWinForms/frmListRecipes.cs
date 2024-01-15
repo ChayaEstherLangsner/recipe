@@ -17,7 +17,6 @@ namespace RecipeWinForms
 {
     public partial class frmListRecipes : Form
     {
-        
         public frmListRecipes()
         {
             InitializeComponent();
@@ -25,21 +24,16 @@ namespace RecipeWinForms
             gMain.KeyDown += GMain_KeyDown;
             btnNew.Click += BtnNew_Click;
             this.Activated += FrmListRecipes_Activated;
-            
         }
-
         private void BindData()
         {
                 gMain.DataSource = Recipe.GetRecipeSummary();
                 WindowsFormsUtility.FormatGridForSearchResults(gMain, "Recipe");
         }
-
         private void FrmListRecipes_Activated(object? sender, EventArgs e)
         {
             BindData();
         }
-
-
         private void ShowRecipeForm(int rowindex)
         {
             int id = 0;
@@ -64,13 +58,10 @@ namespace RecipeWinForms
                 e.SuppressKeyPress = true;
             }
         }
-
         private void BtnNew_Click(object? sender, EventArgs e)
         {
             ShowRecipeForm(-1);
         }
-
     }
-
 }
 

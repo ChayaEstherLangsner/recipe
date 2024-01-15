@@ -25,12 +25,10 @@ namespace RecipeWinForms
             btnNew.Click += BtnNew_Click;
             this.Activated += FrmListCookbooks_Activated;
         }
-
         private void FrmListCookbooks_Activated(object? sender, EventArgs e)
         {
             BindData();
         }
-
         private void BindData()
         {
             gMain.DataSource = Cookbook.GetCookookSummary();
@@ -64,8 +62,6 @@ namespace RecipeWinForms
         {
             ShowCookbookForm(-1);
         }
-
     }
-
 }
 

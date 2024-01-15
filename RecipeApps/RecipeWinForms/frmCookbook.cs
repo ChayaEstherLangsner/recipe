@@ -20,7 +20,6 @@ namespace RecipeWinForms
         BindingSource bindsource = new BindingSource();
         int Cookbookid = 0;
         string deletecolname = "deletecol";
-
         public frmCookbook()
         {
             InitializeComponent();
@@ -30,11 +29,9 @@ namespace RecipeWinForms
             btnSaveRecipe.Click += BtnSaveRecipe_Click;
             this.Activated += FrmCookbook_Activated;
         }
-
         private void FrmCookbook_Activated(object? sender, EventArgs e)
         {
             LoadCookbookRecipes(Cookbookid);
-
         }
 
         private string GetCookbookDesc()
@@ -51,7 +48,6 @@ namespace RecipeWinForms
         {
             SaveCookbookRecipe();
         }
-
         private void LoadCookbookRecipes(int Cookbookid)
         {
             dtcookbookrecipe = CookbookRecipe.LoadByCookbookId(Cookbookid);
@@ -70,7 +66,6 @@ namespace RecipeWinForms
                 {
                     DeleteCookbookRecipe(e.RowIndex);
                 }
-               
             }
         }
         private void SaveCookbookRecipe()
@@ -105,7 +100,6 @@ namespace RecipeWinForms
                 gRecipe.Rows.RemoveAt(rowIndex);
             }
         }
-    
         public void LoadForm(int Cookbookidval)
         {
             Cookbookid = Cookbookidval;
@@ -123,7 +117,6 @@ namespace RecipeWinForms
             WindowsFormsUtility.SetControlBindings(txtCookbookDateInserted, bindsource);
             WindowsFormsUtility.SetControlBindings(ckbIsActive, bindsource);
             this.Text = GetCookbookDesc();
-            //LoadCookbookRecipes(Cookbookid);
             SetButtonsEnabledBasedOnNewRecord();
             this.Show();
         }
@@ -140,7 +133,6 @@ namespace RecipeWinForms
             {
                 return;
             }
-
             Application.UseWaitCursor = true;
             try
             {
@@ -182,7 +174,6 @@ namespace RecipeWinForms
             }
             return b;
         }
-
         private void BtnSave_Click(object? sender, EventArgs e)
         {
             Save();

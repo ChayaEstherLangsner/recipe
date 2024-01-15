@@ -370,6 +370,7 @@
             this.gIngredient.Name = "gIngredient";
             this.gIngredient.RowHeadersWidth = 51;
             this.gIngredient.RowTemplate.Height = 29;
+            this.gIngredient.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.gIngredient.Size = new System.Drawing.Size(561, 276);
             this.gIngredient.TabIndex = 1;
             // 

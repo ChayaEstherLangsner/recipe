@@ -14,7 +14,6 @@ using System.Windows.Forms;
 
 namespace RecipeWinForms
 {
-
     public partial class frmDataMaintenance : Form
     {
         private enum TableTypeEnum { Users, Cuisine, Ingredient, Measurement, Course }
@@ -36,16 +35,6 @@ namespace RecipeWinForms
             dtlist = DataMaintenance.GetDataList(currenttabletype.ToString());
             gData.Columns.Clear();
             gData.DataSource = dtlist;
-            //switch (tabletype)
-            //{
-            //    case TableTypeEnum.City:
-            //        WindowsFormsUtility.AddComboboxToGrid(gData, DataMaintenance.GetDataList(TableTypeEnum.Country.ToString()), "Country", "CountryName");
-            //        break;
-            //    case TableTypeEnum.SportSubcategory:
-            //        WindowsFormsUtility.AddComboboxToGrid(gData, DataMaintenance.GetDataList(TableTypeEnum.Sport.ToString()), "Sport", "SportName");
-            //        break;
-
-            //}
             WindowsFormsUtility.AddDeleteButtonToGrid(gData, deletecolname);
             WindowsFormsUtility.FormatGridForEdit(gData, currenttabletype.ToString());
         }
@@ -103,7 +92,6 @@ namespace RecipeWinForms
             optMeasurement.Tag = TableTypeEnum.Measurement;
             optCourse.Tag = TableTypeEnum.Course;
         }
-
         private void C_Click(object? sender, EventArgs e)
         {
             if (sender is Control && ((Control)sender).Tag is TableTypeEnum)
@@ -134,7 +122,6 @@ namespace RecipeWinForms
                         e.Cancel = true;
                         this.Activate();
                         break;
-
                 }
             }
         }

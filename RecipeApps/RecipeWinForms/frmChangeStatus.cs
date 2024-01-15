@@ -14,15 +14,12 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace RecipeWinForms
 {
-    
     public partial class frmChangeStatus : Form
     {
         DataTable dtrecipe;
         string status;
         int recipeid;
         BindingSource bindsource = new BindingSource();
-
-
         public frmChangeStatus(int recipeidval)
         {
             InitializeComponent();
@@ -32,10 +29,7 @@ namespace RecipeWinForms
             btnDrafted.Click += Btn_Click;
             btnPublished.Click += Btn_Click;
             btnArchived.Click += Btn_Click;
-
-
         }
-
         public void LoadForm()
         {
             dtrecipe = Recipe.Load(recipeid);
@@ -57,14 +51,12 @@ namespace RecipeWinForms
                 else 
                 { btn.Enabled = true; }
             }
-
         }
         private void Btn_Click(object? sender, EventArgs e)
         {
             System.Windows.Forms.Button btn = (System.Windows.Forms.Button)sender;
             status =  btn.Name.Substring(3);
             Save();
-            
         }
         private void Save()
         {
@@ -83,7 +75,6 @@ namespace RecipeWinForms
                         ((frmMain)this.MdiParent).OpenForm(typeof(frmRecipe), recipeid);
                     }
                     this.Close();
-
                 }
                 catch (Exception ex)
                 {

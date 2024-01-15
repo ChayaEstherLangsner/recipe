@@ -13,7 +13,6 @@ namespace RecipeWinForms
         BindingSource bindsource = new BindingSource();
         int recipeid = 0;
         string deletecolname = "deletecol";
-        
         public frmRecipe()
         { 
             InitializeComponent();
@@ -26,12 +25,10 @@ namespace RecipeWinForms
             btnChangeStatus.Click += BtnChangeStatus_Click;
             this.Activated += FrmRecipe_Activated;
         }
-
         private void FrmRecipe_Activated(object? sender, EventArgs e)
         {
             LoadRecipeIngredients(recipeid);
             LoadRecipeSteps(recipeid);
-
         }
         private string GetRecipeDesc()
         {
@@ -47,12 +44,10 @@ namespace RecipeWinForms
         {
             SaveRecipeIngredient();
         }
-
         private void BtnSaveSteps_Click(object? sender, EventArgs e)
         {
             SaveRecipeStep();
         }
-
         private void LoadRecipeIngredients(int recipeid)
         {
             dtRecipeIngredient = RecipeIngredient.LoadByRecipeId(recipeid);
@@ -94,7 +89,6 @@ namespace RecipeWinForms
                 MessageBox.Show(ex.Message, Application.ProductName);
             }
         }
-
         private void DeleteRecipeIngredient(int rowIndex)
         {
             int id = WindowsFormsUtility.GetIdFromGrid(gIngredient, rowIndex, "RecipeIngredientId");
@@ -178,8 +172,6 @@ namespace RecipeWinForms
             WindowsFormsUtility.SetControlBindings(txtRecipeDatePublished, bindsource);
             WindowsFormsUtility.SetControlBindings(txtRecipeDateArchived, bindsource);
             this.Text = GetRecipeDesc();
-            //LoadRecipeIngredients(recipeid);
-            //LoadRecipeSteps(recipeid);
             SetButtonsEnabledBasedOnNewRecord();
             this.Show();
         }
@@ -202,7 +194,6 @@ namespace RecipeWinForms
             {
                 return;
             }
-
             Application.UseWaitCursor = true;
             try
             {
@@ -244,7 +235,6 @@ namespace RecipeWinForms
             }
             return b;
         }
-
         private void BtnSave_Click(object? sender, EventArgs e)
         {
             Save();

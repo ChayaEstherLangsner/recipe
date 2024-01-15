@@ -19,15 +19,12 @@ namespace RecipeWinForms
             InitializeComponent();
             btnAutoCreate.Click += BtnAutoCreate_Click;
             BindForm();
-
         }
-
         private void BtnAutoCreate_Click(object? sender, EventArgs e)
         {
             int userid = 0;
             if (lstUsers.SelectedValue != null && lstUsers.SelectedValue is int)
             {
-
                 try
                 {
                     userid = (int)lstUsers.SelectedValue;
@@ -48,10 +45,8 @@ namespace RecipeWinForms
                 {
                     Cursor = Cursors.Default;
                 }
-
             }
         }
-
         private void BindForm()
         {
             lstUsers.DataSource = RecipeSystem.Recipe.GetUserList();

@@ -21,13 +21,11 @@ namespace RecipeWinForms
             btnClone.Click += BtnClone_Click;
             BindForm();
         }
-
         private void BtnClone_Click(object? sender, EventArgs e)
         {
             int recipeid = 0;
             if (lstRecipe.SelectedValue != null && lstRecipe.SelectedValue is int)
             {
-
                 try
                 {
                     recipeid = (int)lstRecipe.SelectedValue;
@@ -48,7 +46,6 @@ namespace RecipeWinForms
                 {
                     Cursor = Cursors.Default;
                 }
-
             }
         }
 
