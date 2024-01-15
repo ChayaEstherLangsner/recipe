@@ -70,7 +70,7 @@
             this.lblAppName.AutoSize = true;
             this.tblMain.SetColumnSpan(this.lblAppName, 3);
             this.lblAppName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblAppName.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblAppName.Font = new System.Drawing.Font("Verdana", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblAppName.Location = new System.Drawing.Point(3, 0);
             this.lblAppName.Name = "lblAppName";
             this.lblAppName.Size = new System.Drawing.Size(836, 145);
@@ -83,7 +83,7 @@
             this.lblDesc.AutoSize = true;
             this.tblMain.SetColumnSpan(this.lblDesc, 3);
             this.lblDesc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDesc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDesc.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblDesc.Location = new System.Drawing.Point(3, 145);
             this.lblDesc.Name = "lblDesc";
             this.lblDesc.Size = new System.Drawing.Size(836, 145);
@@ -95,6 +95,7 @@
             // btnRecipeList
             // 
             this.btnRecipeList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRecipeList.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnRecipeList.Location = new System.Drawing.Point(25, 460);
             this.btnRecipeList.Margin = new System.Windows.Forms.Padding(25);
             this.btnRecipeList.Name = "btnRecipeList";
@@ -106,6 +107,7 @@
             // btnMealList
             // 
             this.btnMealList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMealList.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnMealList.Location = new System.Drawing.Point(305, 460);
             this.btnMealList.Margin = new System.Windows.Forms.Padding(25);
             this.btnMealList.Name = "btnMealList";
@@ -117,6 +119,7 @@
             // btnCookbookList
             // 
             this.btnCookbookList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCookbookList.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCookbookList.Location = new System.Drawing.Point(585, 460);
             this.btnCookbookList.Margin = new System.Windows.Forms.Padding(25);
             this.btnCookbookList.Name = "btnCookbookList";
@@ -127,14 +130,14 @@
             // 
             // gOverview
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Corbel", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.gOverview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gOverview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -143,7 +146,7 @@
             this.gOverview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Corbel", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;

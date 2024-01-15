@@ -63,7 +63,7 @@
             this.mnuMain.Location = new System.Drawing.Point(0, 0);
             this.mnuMain.Name = "mnuMain";
             this.mnuMain.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.mnuMain.Size = new System.Drawing.Size(1122, 30);
+            this.mnuMain.Size = new System.Drawing.Size(975, 30);
             this.mnuMain.TabIndex = 0;
             this.mnuMain.Text = "menuStrip1";
             // 
@@ -191,7 +191,7 @@
             this.tsMain.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.tsMain.Location = new System.Drawing.Point(0, 30);
             this.tsMain.Name = "tsMain";
-            this.tsMain.Size = new System.Drawing.Size(1122, 25);
+            this.tsMain.Size = new System.Drawing.Size(975, 25);
             this.tsMain.TabIndex = 1;
             this.tsMain.Text = "toolStrip1";
             // 
@@ -199,7 +199,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1122, 679);
+            this.ClientSize = new System.Drawing.Size(975, 792);
             this.Controls.Add(this.tsMain);
             this.Controls.Add(this.mnuMain);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);

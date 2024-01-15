@@ -142,7 +142,11 @@ namespace RecipeWinForms
         {
             if (gData.Columns[e.ColumnIndex].Name == deletecolname)
             {
-                Delete(e.RowIndex);
+                var result = MessageBox.Show("Are you sure you want to delete this user and all related recipes, meals, and cookbooks?", "Delete", MessageBoxButtons.YesNoCancel);
+                if (result == DialogResult.Yes)
+                {
+                    Delete(e.RowIndex);
+                }
             }
         }
     }

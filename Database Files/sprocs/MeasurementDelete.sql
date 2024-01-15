@@ -8,7 +8,18 @@ begin
 
 	select @MeasurementId = isnull(@MeasurementId,0)
 
+		begin try
+		begin tran
+	delete RecipeIngredient where MeasurementID = @MeasurementId
+
 	delete Measurement where MeasurementID = @MeasurementId
+		commit
+	end try
+	begin catch 
+		rollback;
+		throw
+	end catch
+
 
 	return @return
 end

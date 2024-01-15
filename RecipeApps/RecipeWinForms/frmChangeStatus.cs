@@ -78,6 +78,11 @@ namespace RecipeWinForms
                     dtrecipe = Recipe.Load(recipeid);
                     bindsource.DataSource = dtrecipe;
                     DisableButtons();
+                    if (this.MdiParent != null && this.MdiParent is frmMain)
+                    {
+                        ((frmMain)this.MdiParent).OpenForm(typeof(frmRecipe), recipeid);
+                    }
+                    this.Close();
 
                 }
                 catch (Exception ex)

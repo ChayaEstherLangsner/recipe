@@ -61,8 +61,8 @@ union select 'Salt'
 with x as 
 (
     select UserName = 'John S.', CuisineType = 'American', RecipeName = 'Chocolate Chip Cookies', RecipeCalories = 800, RecipeDatePublished = null, RecipeDateArchived = null 
-    union select 'John S.', 'French', 'Apple Yogurt Smoothie', 600,'12/10/2023' , null
-    union select 'Daniel J.', 'English', 'Cheese Bread', 950, '12/11/2023', '12/13/2023' 
+    union select 'John S.', 'French', 'Apple Yogurt Smoothie', 600,'12/10/2024' , null
+    union select 'Daniel J.', 'English', 'Cheese Bread', 950, '12/11/2024', '12/13/2024' 
 )
 insert Recipe (UsersID, CuisineID, RecipeName, RecipeCalories, RecipeDatePublished, RecipeDateArchived)
 select u.UsersID, c.CuisineID, x.RecipeName, x.RecipeCalories, x.RecipeDatePublished, x.RecipeDateArchived

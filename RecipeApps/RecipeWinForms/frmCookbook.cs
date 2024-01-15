@@ -28,7 +28,13 @@ namespace RecipeWinForms
             BtnDelete.Click += BtnDelete_Click;
             gRecipe.CellContentClick += GRecipe_CellContentClick;
             btnSaveRecipe.Click += BtnSaveRecipe_Click;
-            this.Shown += FrmCookbook_Shown;
+            this.Activated += FrmCookbook_Activated;
+        }
+
+        private void FrmCookbook_Activated(object? sender, EventArgs e)
+        {
+            LoadCookbookRecipes(Cookbookid);
+
         }
 
         private string GetCookbookDesc()
@@ -55,18 +61,16 @@ namespace RecipeWinForms
             WindowsFormsUtility.AddDeleteButtonToGrid(gRecipe, deletecolname);
             WindowsFormsUtility.FormatGridForEdit(gRecipe, "CookbookRecipe");
         }
-        private void FrmCookbook_Shown(object? sender, EventArgs e)
-        {
-
-            LoadCookbookRecipes(Cookbookid);
-
-
-        }
         private void GRecipe_CellContentClick(object? sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0 && e.RowIndex != -1)
+            if (e.ColumnIndex == 5 && e.RowIndex != -1)
             {
-                DeleteCookbookRecipe(e.RowIndex);
+                var response = MessageBox.Show("Are you sure you want to delete this Recipe?", "Recipe", MessageBoxButtons.YesNo);
+                if (response == DialogResult.Yes)
+                {
+                    DeleteCookbookRecipe(e.RowIndex);
+                }
+               
             }
         }
         private void SaveCookbookRecipe()
@@ -119,7 +123,7 @@ namespace RecipeWinForms
             WindowsFormsUtility.SetControlBindings(txtCookbookDateInserted, bindsource);
             WindowsFormsUtility.SetControlBindings(ckbIsActive, bindsource);
             this.Text = GetCookbookDesc();
-            LoadCookbookRecipes(Cookbookid);
+            //LoadCookbookRecipes(Cookbookid);
             SetButtonsEnabledBasedOnNewRecord();
             this.Show();
         }

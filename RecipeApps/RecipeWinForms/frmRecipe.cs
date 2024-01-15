@@ -24,11 +24,15 @@ namespace RecipeWinForms
             btnSaveIngredient.Click += BtnSaveIngredient_Click;
             BtnSaveSteps.Click += BtnSaveSteps_Click;
             btnChangeStatus.Click += BtnChangeStatus_Click;
-            this.Shown += FrmRecipe_Shown;
-
-            //txtRecipeName.DataBindings.DefaultDataSourceUpdateMode = DataSourceUpdateMode.OnPropertyChanged;
+            this.Activated += FrmRecipe_Activated;
         }
 
+        private void FrmRecipe_Activated(object? sender, EventArgs e)
+        {
+            LoadRecipeIngredients(recipeid);
+            LoadRecipeSteps(recipeid);
+
+        }
         private string GetRecipeDesc()
         {
             string value = "New Recipe";
@@ -67,19 +71,16 @@ namespace RecipeWinForms
             WindowsFormsUtility.AddDeleteButtonToGrid(gSteps, deletecolname);
             WindowsFormsUtility.FormatGridForEdit(gSteps, "RecipeStep");
         }
-        private void FrmRecipe_Shown(object? sender, EventArgs e)
-        {
-
-            LoadRecipeIngredients(recipeid);
-            LoadRecipeSteps(recipeid);
-
-
-        }
         private void GIngredient_CellContentClick(object? sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0 && e.RowIndex != -1 )
+            if (e.ColumnIndex == 8 && e.RowIndex != -1 )
             {
-                DeleteRecipeIngredient(e.RowIndex);
+                var response = MessageBox.Show("Are you sure you want to delete this ingredient?", "Ingredients", MessageBoxButtons.YesNo);
+                if (response == DialogResult.Yes)
+                {
+                    DeleteRecipeIngredient(e.RowIndex);
+                }
+             
             }
         }
         private void SaveRecipeIngredient()
@@ -116,9 +117,13 @@ namespace RecipeWinForms
         }
         private void GSteps_CellContentClick(object? sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 4 && e.RowIndex != -1)
+            if (e.ColumnIndex == 0 && e.RowIndex != -1 )
             {
-                DeleteRecipeStep(e.RowIndex);
+                var response = MessageBox.Show("Are you sure you want to delete this step?", "Steps", MessageBoxButtons.YesNo);
+                if (response == DialogResult.Yes)
+                {
+                    DeleteRecipeStep(e.RowIndex);
+                }
             }
         }
         private void SaveRecipeStep()
@@ -173,8 +178,8 @@ namespace RecipeWinForms
             WindowsFormsUtility.SetControlBindings(txtRecipeDatePublished, bindsource);
             WindowsFormsUtility.SetControlBindings(txtRecipeDateArchived, bindsource);
             this.Text = GetRecipeDesc();
-            LoadRecipeIngredients(recipeid);
-            LoadRecipeSteps(recipeid);
+            //LoadRecipeIngredients(recipeid);
+            //LoadRecipeSteps(recipeid);
             SetButtonsEnabledBasedOnNewRecord();
             this.Show();
         }

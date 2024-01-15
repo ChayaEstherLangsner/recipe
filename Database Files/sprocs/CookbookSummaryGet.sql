@@ -9,5 +9,6 @@ on c.UsersId = u.UsersId
 left join RecipeCookbook r
 on c.CookbookId = r.CookbookId
 group by c.CookbookName, UserFirstName, u.UserLastName,c.CookbookPrice, c.CookbookID
+order by CookbookName
  go 
  exec CookbookSummaryGet

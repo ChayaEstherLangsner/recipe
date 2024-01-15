@@ -5,10 +5,7 @@ create or alter proc dbo.RecipeUpdate
 @CuisineId int,
 @RecipeName varchar(50),
 @RecipeCalories int,
-@RecipeStatus varchar(20) = '' output,
-@RecipeDateDrafted datetime = '' output , 
-@RecipeDatePublished date = '' output, 
-@RecipeDateArchived date = '' output
+@RecipeStatus varchar(20) = '' output
 )
  as
  begin 
@@ -31,12 +28,6 @@ RecipeCalories = @RecipeCalories
 where RecipeId = @RecipeId
 end
 
-select @RecipeStatus = RecipeStatus,  
-@RecipeDateDrafted = RecipeDateDrafted, 
-@RecipeDatePublished = RecipeDatePublished,
-@RecipeDateArchived = RecipeDateArchived
-from Recipe
-where RecipeID = @RecipeId
 
  end 
  go

@@ -155,7 +155,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tblMain);
             this.Name = "frmDataMaintenance";
-            this.Text = "frmDataMaintenance";
+            this.Text = "Data Maintenance";
             this.tblMain.ResumeLayout(false);
             this.tblMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gData)).EndInit();
