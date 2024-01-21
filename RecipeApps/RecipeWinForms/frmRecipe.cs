@@ -27,8 +27,8 @@ namespace RecipeWinForms
         }
         private void FrmRecipe_Activated(object? sender, EventArgs e)
         {
-            LoadRecipeIngredients(recipeid);
             LoadRecipeSteps(recipeid);
+            LoadRecipeIngredients(recipeid);
         }
         private string GetRecipeDesc()
         {

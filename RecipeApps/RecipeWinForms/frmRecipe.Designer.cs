@@ -105,7 +105,7 @@
             this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblMain.Size = new System.Drawing.Size(587, 693);
+            this.tblMain.Size = new System.Drawing.Size(587, 762);
             this.tblMain.TabIndex = 1;
             // 
             // txtRecipeName
@@ -323,7 +323,7 @@
             this.tRecipeDetails.Location = new System.Drawing.Point(3, 317);
             this.tRecipeDetails.Name = "tRecipeDetails";
             this.tRecipeDetails.SelectedIndex = 0;
-            this.tRecipeDetails.Size = new System.Drawing.Size(581, 373);
+            this.tRecipeDetails.Size = new System.Drawing.Size(581, 442);
             this.tRecipeDetails.TabIndex = 37;
             // 
             // tpIngredients
@@ -332,7 +332,7 @@
             this.tpIngredients.Location = new System.Drawing.Point(4, 37);
             this.tpIngredients.Name = "tpIngredients";
             this.tpIngredients.Padding = new System.Windows.Forms.Padding(3);
-            this.tpIngredients.Size = new System.Drawing.Size(573, 332);
+            this.tpIngredients.Size = new System.Drawing.Size(573, 401);
             this.tpIngredients.TabIndex = 0;
             this.tpIngredients.Text = "Ingredients";
             this.tpIngredients.UseVisualStyleBackColor = true;
@@ -349,7 +349,7 @@
             this.tblIngredients.RowCount = 2;
             this.tblIngredients.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblIngredients.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblIngredients.Size = new System.Drawing.Size(567, 326);
+            this.tblIngredients.Size = new System.Drawing.Size(567, 395);
             this.tblIngredients.TabIndex = 1;
             // 
             // btnSaveIngredient
@@ -371,7 +371,7 @@
             this.gIngredient.RowHeadersWidth = 51;
             this.gIngredient.RowTemplate.Height = 29;
             this.gIngredient.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.gIngredient.Size = new System.Drawing.Size(561, 276);
+            this.gIngredient.Size = new System.Drawing.Size(561, 345);
             this.gIngredient.TabIndex = 1;
             // 
             // tpSteps
@@ -478,7 +478,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(587, 693);
+            this.ClientSize = new System.Drawing.Size(587, 762);
             this.Controls.Add(this.tblMain);
             this.Name = "frmRecipe";
             this.Text = "Recipe";

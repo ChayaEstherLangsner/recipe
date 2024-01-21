@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\source\repos\CPUFramework\CPUFramework.csproj" />
     <ProjectReference Include="..\..\..\CPUFramework\CPUFramework.csproj" />
   </ItemGroup>
 
