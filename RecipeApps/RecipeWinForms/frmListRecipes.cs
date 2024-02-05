@@ -1,19 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using CPUWindowsFormFramework;
-using System.Xml.Linq;
-using RecipeSystem;
-
-
-namespace RecipeWinForms
+﻿namespace RecipeWinForms
 {
     public partial class frmListRecipes : Form
     {
