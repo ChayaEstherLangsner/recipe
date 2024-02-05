@@ -380,7 +380,7 @@
             this.tpSteps.Location = new System.Drawing.Point(4, 37);
             this.tpSteps.Name = "tpSteps";
             this.tpSteps.Padding = new System.Windows.Forms.Padding(3);
-            this.tpSteps.Size = new System.Drawing.Size(573, 332);
+            this.tpSteps.Size = new System.Drawing.Size(573, 401);
             this.tpSteps.TabIndex = 1;
             this.tpSteps.Text = "Steps";
             this.tpSteps.UseVisualStyleBackColor = true;
@@ -397,7 +397,7 @@
             this.tblSteps.RowCount = 2;
             this.tblSteps.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblSteps.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblSteps.Size = new System.Drawing.Size(567, 326);
+            this.tblSteps.Size = new System.Drawing.Size(567, 395);
             this.tblSteps.TabIndex = 1;
             // 
             // BtnSaveSteps
@@ -418,7 +418,7 @@
             this.gSteps.Name = "gSteps";
             this.gSteps.RowHeadersWidth = 51;
             this.gSteps.RowTemplate.Height = 29;
-            this.gSteps.Size = new System.Drawing.Size(561, 276);
+            this.gSteps.Size = new System.Drawing.Size(561, 345);
             this.gSteps.TabIndex = 1;
             // 
             // tblButtons

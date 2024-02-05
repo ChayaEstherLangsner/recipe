@@ -68,7 +68,7 @@ namespace RecipeWinForms
         }
         private void GIngredient_CellContentClick(object? sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 8 && e.RowIndex != -1 )
+            if (e.RowIndex != -1 && gIngredient.Columns[e.ColumnIndex].Name == deletecolname)
             {
                 var response = MessageBox.Show("Are you sure you want to delete this ingredient?", "Ingredients", MessageBoxButtons.YesNo);
                 if (response == DialogResult.Yes)
@@ -111,7 +111,7 @@ namespace RecipeWinForms
         }
         private void GSteps_CellContentClick(object? sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0 && e.RowIndex != -1 )
+            if (e.RowIndex != -1 && gSteps.Columns[e.ColumnIndex].Name == deletecolname)
             {
                 var response = MessageBox.Show("Are you sure you want to delete this step?", "Steps", MessageBoxButtons.YesNo);
                 if (response == DialogResult.Yes)
