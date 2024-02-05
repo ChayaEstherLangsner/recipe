@@ -18,7 +18,7 @@ namespace RecipeWinForms
     {
         DataTable dtrecipe;
         string status;
-        int recipeid;
+        int recipeid; 
         BindingSource bindsource = new BindingSource();
         public frmChangeStatus(int recipeidval)
         {
