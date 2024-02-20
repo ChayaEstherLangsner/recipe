@@ -15,7 +15,14 @@
             gRecipe.CellContentClick += GRecipe_CellContentClick;
             btnSaveRecipe.Click += BtnSaveRecipe_Click;
             this.Activated += FrmCookbook_Activated;
+            gRecipe.DataError += GRecipe_DataError;
         }
+
+        private void GRecipe_DataError(object? sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Value must be an int");
+        }
+
         private void FrmCookbook_Activated(object? sender, EventArgs e)
         {
             LoadCookbookRecipes(Cookbookid);
@@ -163,7 +170,7 @@
         }
         private void BtnSave_Click(object? sender, EventArgs e)
         {
-            Save();
+                Save();
         }
     }
 }

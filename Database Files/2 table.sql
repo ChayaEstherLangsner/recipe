@@ -67,8 +67,10 @@ create table dbo.Recipe
         constraint ck_RecipeCalories_Must_Be_greater_than_zero check (RecipeCalories > 0),
     RecipeDateDrafted datetime default getdate() not null
         constraint ck_DateDrafted_must_be_equal_to_or_less_than_the_current_date check (RecipeDateDrafted <= Getdate()),
-    RecipeDatePublished datetime null,
-    RecipeDateArchived datetime null,
+    RecipeDatePublished datetime null
+	constraint ck_DatePublished_must_be_equal_to_or_less_than_the_current_date check (RecipeDatePublished <= Getdate()),
+    RecipeDateArchived datetime null
+	constraint ck_DateArchived_must_be_equal_to_or_less_than_the_current_date check (RecipeDateArchived <= Getdate()),
     RecipeStatus as case 
         when RecipeDatePublished is null and RecipeDateArchived is null then 'Drafted'
         when RecipeDatePublished is not null and RecipeDateArchived is null then 'Published'

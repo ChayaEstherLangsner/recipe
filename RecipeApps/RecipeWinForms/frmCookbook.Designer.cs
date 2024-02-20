@@ -284,8 +284,6 @@
             this.ckbIsActive.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.ckbIsActive.AutoSize = true;
-            this.ckbIsActive.Checked = true;
-            this.ckbIsActive.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ckbIsActive.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ckbIsActive.Location = new System.Drawing.Point(170, 215);
             this.ckbIsActive.Name = "ckbIsActive";

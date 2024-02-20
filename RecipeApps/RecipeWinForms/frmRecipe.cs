@@ -19,7 +19,20 @@
             BtnSaveSteps.Click += BtnSaveSteps_Click;
             btnChangeStatus.Click += BtnChangeStatus_Click;
             this.Activated += FrmRecipe_Activated;
+            gIngredient.DataError += GIngredient_DataError;
+            gSteps.DataError += GSteps_DataError;
         }
+
+        private void GSteps_DataError(object? sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Value must be an int");
+        }
+
+        private void GIngredient_DataError(object? sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Value must be an int");
+        }
+
         private void FrmRecipe_Activated(object? sender, EventArgs e)
         {
             LoadRecipeSteps(recipeid);
@@ -208,16 +221,15 @@
         {
             Delete();
         }
-        private bool Save()
+        private void Save()
         {
-            bool b = false;
             Application.UseWaitCursor = true;
             try
             {
                 Recipe.Save(dtrecipe);
-                b = true;
-                bindsource.ResetBindings(false);
+                bindsource.ResetBindings(true);
                 recipeid = SQLUtility.GetValueFromFirstRowAsInt(dtrecipe, "RecipeId");
+                LoadForm(recipeid);
                 SetButtonsEnabledBasedOnNewRecord();
             }
             catch (Exception ex)
@@ -228,11 +240,11 @@
             {
                 Application.UseWaitCursor = false;
             }
-            return b;
         }
         private void BtnSave_Click(object? sender, EventArgs e)
         {
             Save();
         }
+
     }
 }

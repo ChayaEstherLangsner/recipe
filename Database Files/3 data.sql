@@ -60,12 +60,12 @@ union select 'Salt'
 ;
 with x as 
 (
-    select UserName = 'John S.', CuisineType = 'American', RecipeName = 'Chocolate Chip Cookies', RecipeCalories = 800, RecipeDatePublished = null, RecipeDateArchived = null 
-    union select 'John S.', 'French', 'Apple Yogurt Smoothie', 600,'12/10/2024' , null
-    union select 'Daniel J.', 'English', 'Cheese Bread', 950, '12/11/2024', '12/13/2024' 
+    select UserName = 'John S.', CuisineType = 'American', RecipeName = 'Chocolate Chip Cookies', RecipeCalories = 800, RecipeDateDrafted= getdate(),RecipeDatePublished = null, RecipeDateArchived = null 
+    union select 'John S.', 'French', 'Apple Yogurt Smoothie', 600, '1/1/2024','1/10/2024' , null
+    union select 'Daniel J.', 'English', 'Cheese Bread', 950,'1/2/2024', '1/11/2024', '1/13/2024' 
 )
-insert Recipe (UsersID, CuisineID, RecipeName, RecipeCalories, RecipeDatePublished, RecipeDateArchived)
-select u.UsersID, c.CuisineID, x.RecipeName, x.RecipeCalories, x.RecipeDatePublished, x.RecipeDateArchived
+insert Recipe (UsersID, CuisineID, RecipeName, RecipeCalories, RecipeDateDrafted,RecipeDatePublished, RecipeDateArchived)
+select u.UsersID, c.CuisineID, x.RecipeName, x.RecipeCalories, x.RecipeDateDrafted ,x.RecipeDatePublished, x.RecipeDateArchived
 from x 
 join Users u
 on x.UserName = u.UserName

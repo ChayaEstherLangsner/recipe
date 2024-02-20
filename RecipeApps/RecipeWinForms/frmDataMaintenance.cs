@@ -14,7 +14,14 @@
             gData.CellContentClick += GData_CellContentClick;
             SetupRadioButtons();
             BindData(currenttabletype);
+            gData.DataError += GData_DataError;
         }
+
+        private void GData_DataError(object? sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Value must be an int");
+        }
+
         private void BindData(TableTypeEnum tabletype)
         {
             currenttabletype = tabletype;
@@ -115,7 +122,7 @@
         {
             if (gData.Columns[e.ColumnIndex].Name == deletecolname)
             {
-                var result = MessageBox.Show("Are you sure you want to delete this user and all related recipes, meals, and cookbooks?", "Delete", MessageBoxButtons.YesNoCancel);
+                var result = MessageBox.Show("Are you sure you want to delete this record and all related records?", "Delete", MessageBoxButtons.YesNoCancel);
                 if (result == DialogResult.Yes)
                 {
                     Delete(e.RowIndex);
