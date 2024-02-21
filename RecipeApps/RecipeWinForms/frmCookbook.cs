@@ -159,7 +159,7 @@
                 SetButtonsEnabledBasedOnNewRecord();
             }
             catch (Exception ex)
-            {
+            { 
                 MessageBox.Show(ex.Message, "Cookbook");
             }
             finally
