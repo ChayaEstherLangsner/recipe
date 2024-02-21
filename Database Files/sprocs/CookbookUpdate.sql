@@ -7,31 +7,32 @@ create or alter proc dbo.CookbookUpdate
 @IsActive bit output,
 @CookbookDateInserted datetime = '' output 
 )
- as
- begin 
+as
+begin 
 
- select @CookbookId = isnull(@CookbookId, 0)
-if (@CookbookId = 0)
-begin
- insert Cookbook(CookbookName,UsersId , CookbookPrice, IsActive, CookbookDateInserted)
- values (@CookbookName, @UsersId, @CookbookPrice, @IsActive, GETDATE())
-select @CookbookId = SCOPE_IdENTITY()
- end
- else 
- begin
-update Cookbook 
-set 
-CookbookName = @CookbookName,
-UsersId = @UsersId, 
-CookbookPrice = @CookbookPrice, 
-IsActive = @IsActive,
-CookbookDateInserted = GETDATE()
-where CookbookID = @CookbookId
-end
+	select @CookbookId = isnull(@CookbookId, 0)
 
-select @CookbookDateInserted = CookbookDateInserted
-from Cookbook
-where CookbookID = @CookbookId
+	if (@CookbookId = 0)
+		begin
+			 insert Cookbook(CookbookName,UsersId , CookbookPrice, IsActive, CookbookDateInserted)
+			 values (@CookbookName, @UsersId, @CookbookPrice, @IsActive, GETDATE())
 
- end 
- go
+			 select @CookbookId = SCOPE_IdENTITY()
+		end
+	else 
+		begin
+			update Cookbook 
+			set CookbookName = @CookbookName,
+			UsersId = @UsersId, 
+			CookbookPrice = @CookbookPrice, 
+			IsActive = @IsActive,
+			CookbookDateInserted = GETDATE()
+			where CookbookID = @CookbookId
+		end
+
+	select @CookbookDateInserted = CookbookDateInserted
+	from Cookbook
+	where CookbookID = @CookbookId
+
+end 
+go
