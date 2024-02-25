@@ -36,6 +36,12 @@ begin
 	
 	delete Cookbook where UsersID = @UsersId
 
+			delete rmc
+		from RecipeMealCourse rmc 
+		join Recipe r
+		on r.RecipeID = rmc.RecipeID 
+		where UsersID = @UsersId
+
 	delete rc 
 	from RecipeCookbook rc 
 	join Recipe r

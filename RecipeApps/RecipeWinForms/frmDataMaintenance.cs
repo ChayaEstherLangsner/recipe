@@ -1,4 +1,6 @@
-﻿namespace RecipeWinForms
+﻿using Microsoft.VisualBasic.ApplicationServices;
+
+namespace RecipeWinForms
 {
     public partial class frmDataMaintenance : Form
     {
@@ -122,7 +124,19 @@
         {
             if (gData.Columns[e.ColumnIndex].Name == deletecolname)
             {
-                var result = MessageBox.Show("Are you sure you want to delete this record and all related records?", "Delete", MessageBoxButtons.YesNoCancel);
+                string confimation;
+                if (currenttabletype == TableTypeEnum.Users)
+                {
+                    confimation = "Are you sure you want to delete this user and all related recipes, meals, and cookbooks?";
+                }
+                else
+                {
+                    confimation = "Are you sure you want to delete this record and all related records?";
+
+                }
+                DialogResult result;
+                result = MessageBox.Show(confimation, "Delete", MessageBoxButtons.YesNoCancel);
+
                 if (result == DialogResult.Yes)
                 {
                     Delete(e.RowIndex);

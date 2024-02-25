@@ -1,7 +1,7 @@
 USE [RecipeDB]
 GO
 
-ALTER   proc [dbo].[MealSummaryGet] 
+create or ALTER   proc [dbo].[MealSummaryGet] 
  (@Message varchar (500) = '' output) 
 
  as
